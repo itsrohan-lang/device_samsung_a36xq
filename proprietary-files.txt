@@ -100,8 +100,8 @@ vendor/lib64/spatializer-aidl-cpp.so
 vendor/lib64/vendor.qti.hardware.agm-V1-ndk.so
 
 # Audio configs
-etc/audio_effects.xml
-etc/audio_effects_common.conf
+system/etc/audio_effects.xml
+system/etc/audio_effects_common.conf
 vendor/etc/audio/sku_parrot/audio_effects.conf
 vendor/etc/audio/sku_parrot/audio_effects.xml
 vendor/etc/audio/sku_parrot/audio_effects_config.xml
@@ -212,8 +212,8 @@ vendor/lib64/libboot_control_qti.so
 vendor/lib64/librecovery_updater.so
 
 # Camera
-lib64/libarcsoft_photoeditor.arcsoft.so
-lib64/libmpbase.so
+system/lib64/libarcsoft_photoeditor.arcsoft.so
+system/lib64/libmpbase.so
 system_ext/lib64/vendor.qti.hardware.seccam@1.0.so
 vendor/lib64/camera/components/com.bots.node.vendortagwrite.so
 vendor/lib64/camera/components/com.qti.camx.chiiqutils.so
@@ -442,7 +442,7 @@ vendor/lib64/libfastcvdsp_stub.so
 vendor/lib64/libfastcvopt.so
 
 # CNE
-lib64/vendor.qti.hardware.data.connectionaidl-V1-ndk.so
+system/lib64/vendor.qti.hardware.data.connectionaidl-V1-ndk.so
 system_ext/lib64/com.quicinc.cne.api@1.0.so
 system_ext/lib64/com.quicinc.cne.api@1.1.so
 system_ext/lib64/com.quicinc.cne.constants@1.0.so
@@ -699,7 +699,7 @@ vendor/firmware/a710_zap.mbn
 vendor/firmware/a710_zap.mdt
 
 # DPM
-lib64/vendor.qti.diaghal-V1-ndk.so
+system/lib64/vendor.qti.diaghal-V1-ndk.so
 system_ext/etc/dpm/dpm.conf
 system_ext/lib64/vendor.qti.diaghal@1.0.so
 vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so
@@ -762,7 +762,7 @@ vendor/etc/vintf/manifest/android.hardware.gatekeeper-service.xml
 vendor/lib64/hw/gatekeeper.mdfpp.so
 
 # GNSS
-lib64/vendor.qti.gnss-V8-cpp.so
+system/lib64/vendor.qti.gnss-V8-cpp.so
 vendor/bin/hw/android.hardware.gnss-aidl-service-qti
 vendor/bin/loc_launcher
 vendor/bin/lowi-server
@@ -828,24 +828,24 @@ vendor/bin/hw/android.hardware.lights-service.samsung
 vendor/lib64/hw/local_time.default.so
 
 # Media
-etc/seccomp_policy/mediacodec.policy
-lib64/graphicbuffersource-aidl-ndk.so
-lib64/libaconfig_storage_read_api_cc.so
-lib64/libdatasource.so
-lib64/libdatasource_local_cache.so
-lib64/libhdcp2.so
-lib64/libhdcp_client_aidl.so
-lib64/libmedia_codeclist.so
-lib64/libmedia_codeclist_capabilities.so
-lib64/libstagefright_aidl_bufferpool2.so
-lib64/libstagefright_bufferpool@2.0.1.so
-lib64/libstagefright_codecbase.so
-lib64/libstagefright_framecapture_utils.so
-lib64/libstagefright_graphicbuffersource_aidl.so
-lib64/libstagefright_hdcp.so
-lib64/libstagefright_httplive_sec.so
-lib64/libstagefright_surface_utils.so
-lib64/vendor.samsung.hardware.security.hdcp.wifidisplay-V2-ndk.so
+system/etc/seccomp_policy/mediacodec.policy
+system/lib64/graphicbuffersource-aidl-ndk.so
+system/lib64/libaconfig_storage_read_api_cc.so
+system/lib64/libdatasource.so
+system/lib64/libdatasource_local_cache.so
+system/lib64/libhdcp2.so
+system/lib64/libhdcp_client_aidl.so
+system/lib64/libmedia_codeclist.so
+system/lib64/libmedia_codeclist_capabilities.so
+system/lib64/libstagefright_aidl_bufferpool2.so
+system/lib64/libstagefright_bufferpool@2.0.1.so
+system/lib64/libstagefright_codecbase.so
+system/lib64/libstagefright_framecapture_utils.so
+system/lib64/libstagefright_graphicbuffersource_aidl.so
+system/lib64/libstagefright_hdcp.so
+system/lib64/libstagefright_httplive_sec.so
+system/lib64/libstagefright_surface_utils.so
+system/lib64/vendor.samsung.hardware.security.hdcp.wifidisplay-V2-ndk.so
 system_ext/lib64/vendor.qti.hardware.vpp-V1-ndk.so
 system_ext/lib64/vendor.qti.hardware.vpp@1.1.so
 vendor/bin/hw/vendor.qti.media.c2@1.0-service
@@ -909,8 +909,8 @@ vendor/lib64/nfc_nci_nxpsn.so
 vendor/lib64/vendor.samsung.hardware.nfc_aidl-V1-ndk.so
 
 # NFC configs
-etc/libnfc-nci.conf
-etc/libnfc-nci_temp.conf
+system/etc/libnfc-nci.conf
+system/etc/libnfc-nci_temp.conf
 vendor/etc/nfc/libnfc-nxp_RF.conf
 vendor/etc/libnfc-SN220_19_2MHZ.conf
 vendor/etc/libnfc-SN220_38_4MHZ.conf
@@ -1054,10 +1054,10 @@ vendor/lib64/vendor.samsung.hardware.radio.network-V1-ndk.so
 vendor/lib64/vendor.samsung.hardware.radio.sim-V1-ndk.so
 
 # Radio (IMS)
-bin/charon
-lib64/libcharon.so
-lib64/libstrongswan.so
-lib64/libucsengine.system.so
+system/bin/charon
+system/lib64/libcharon.so
+system/lib64/libstrongswan.so
+system/lib64/libucsengine.system.so
 system_ext/lib64/com.qualcomm.qti.imscmservice@2.0.so
 system_ext/lib64/com.qualcomm.qti.imscmservice@2.1.so
 system_ext/lib64/com.qualcomm.qti.imscmservice@2.2.so

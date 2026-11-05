@@ -1,0 +1,14 @@
+# Soft dependencies extracted from modules themselves.
+softdep muic_s2mf301 pre: s2mf301_pmeter top_s2mf301
+softdep muic_s2mf301 post: s2mf301-usbpd
+softdep q6_notifier_dlkm pre: qcom_q6v5_pas
+softdep msm_video pre: subsys-pil-tz msm-mmrm
+softdep pdic_s2mf301 pre: muic_s2mf301
+softdep msm_kgsl pre: arm_smmu nvmem_qfprom socinfo governor_msm_adreno_tz governor_gpubw_mon
+softdep qsee_ipc_irq_bridge pre: qcom_ipcc
+softdep dwc3_msm pre: phy-generic phy-msm-snps-hs phy-msm-ssusb-qmp eud
+softdep machine_dlkm pre: bt_fm_slim
+softdep ipam pre: subsys-pil-tz
+softdep ipam pre: qcom-arm-smmu-mod
+softdep leds_qti_tri_led pre: pwm-qti-lpg
+softdep s2mf301_fuelgauge post: s2mf301_charger
