@@ -62,6 +62,38 @@ lunch lineage_a36xq-userdebug
 mka bacon
 ```
 
+## PixelOS (Android 17)
+
+This tree builds on PixelOS `seventeen` as well as LineageOS 24.0 — the two
+share the same build system and the same `vendor/lineage` namespace, so the
+product definition, `BoardConfig.mk` and the `vendor/lineage/config/common_full_phone.mk`
+inherit all work unchanged.
+
+Sync the PixelOS sources:
+
+```bash
+repo init -u https://github.com/PixelOS-AOSP/android_manifest.git -b seventeen --git-lfs
+repo sync -c -j$(nproc) --force-sync --no-clone-bundle --no-tags
+```
+
+What is genuinely different:
+
+| | LineageOS 24.0 | PixelOS seventeen |
+| :--- | :--- | :--- |
+| common product config | `vendor/lineage/config/common_full_phone.mk` | same path (PixelOS keeps the namespace) |
+| `extract-utils` | `tools/extract-utils` | `vendor/pixel/extract-utils` |
+| qcom sepolicy | `device/qcom/sepolicy_vndr/` | same path, resolved through a manifest linkfile |
+| launch target | `lineage_a36xq-userdebug` | same |
+
+`extract-files.py` sets `PYTHONPATH` to both extract-utils locations, so blob
+re-extraction works on either ROM.
+
+The qcom sepolicy include needs no special handling: PixelOS ships
+`device/qcom/sepolicy_vndr/SEPolicy.mk` as a linkfile to
+`hardware/qcom-caf/common/os_pickup_sepolicy_vndr.mk`, and `qcom_defs.mk` puts
+`parrot` in `UM_5_10_FAMILY`, which selects the `sm8450` policy — the same
+branch this tree is validated against.
+
 ## Extracting blobs
 
 ```bash
