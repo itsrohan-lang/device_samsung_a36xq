@@ -1118,7 +1118,7 @@ vendor/etc/vintf/manifest/android.hardware.security.secureclock-service.xml
 vendor/etc/vintf/manifest/android.hardware.security.sharedsecret-service.xml
 vendor/lib64/libcppbor.so
 vendor/lib64/libcppbor_external.so
-vendor/lib64/libkeymaster4_1support.so
+-vendor/lib64/libkeymaster4_1support.so
 vendor/lib64/libskeymint10device.so
 vendor/lib64/libskeymint_cli.so
 vendor/lib64/vendor.samsung.hardware.keymint-V3-ndk.so
@@ -2006,7 +2006,7 @@ vendor/lib64/libbase64.so
 vendor/lib64/libbatching.so
 vendor/lib64/libbatterylistener.so
 vendor/lib64/libbeautyshot.arcsoft.so
-vendor/lib64/libbinderdebug.so
+-vendor/lib64/libbinderdebug.so
 vendor/lib64/libbitflags.dylib.so
 vendor/lib64/libbitmlengine.so
 vendor/lib64/libbluetooth_audio_session.so
