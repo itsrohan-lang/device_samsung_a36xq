@@ -386,7 +386,7 @@ vendor/lib64/libopencv.so
 vendor/lib64/libopencv3a.so
 vendor/lib64/libos.so
 vendor/lib64/libqcwrappercommon.so
-vendor/lib64/libqti_vndfwk_detect.so
+-vendor/lib64/libqti_vndfwk_detect.so
 vendor/lib64/libscveCommon.so
 vendor/lib64/libscveCommon_stub.so
 vendor/lib64/libscveObjectSegmentation.so
@@ -2311,7 +2311,7 @@ vendor/lib64/libvideotxr.so
 vendor/lib64/libvideoutils.so
 vendor/lib64/libvk_cass_interface.so
 vendor/lib64/libvkservice.so
-vendor/lib64/libvndfwk_detect_jni.qti.so
+-vendor/lib64/libvndfwk_detect_jni.qti.so
 vendor/lib64/libvndfwk_detect_jni.qti_vendor.so
 vendor/lib64/libwpa_drv_oem.so
 vendor/lib64/libwsmd_functions.so
