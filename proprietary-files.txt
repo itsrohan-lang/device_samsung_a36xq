@@ -1992,7 +1992,7 @@ vendor/lib64/libaidenoiser.so
 vendor/lib64/libaidenoiserv2.so
 vendor/lib64/libaivideocentral.arcsoft.so
 vendor/lib64/libandroid_log_sys.dylib.so
-vendor/lib64/libandroid_logger.dylib.so
+-vendor/lib64/libandroid_logger.dylib.so
 vendor/lib64/libanyhow.dylib.so
 vendor/lib64/libats.so
 vendor/lib64/libaudio_log_utils.so
