@@ -2038,7 +2038,7 @@ vendor/lib64/libcodec2_sec_soft_common.so
 vendor/lib64/libcodec2_sec_vc1dec.so
 -vendor/lib64/libcodec2_simple_component.so
 vendor/lib64/libcodec2_soft_ac4dec.so
-vendor/lib64/libcodec2_soft_common.so
+-vendor/lib64/libcodec2_soft_common.so
 vendor/lib64/libcodec2_soft_eac3dec.so
 vendor/lib64/libcolor-default.so
 vendor/lib64/libcppcose_rkp.so
@@ -2136,7 +2136,7 @@ vendor/lib64/libmctfengine_stub.so
 vendor/lib64/libmdsprpc.so
 vendor/lib64/libmediaconverter.so
 vendor/lib64/libmediautils_vendor.so
-vendor/lib64/libmeminfo.so
+-vendor/lib64/libmeminfo.so
 vendor/lib64/libmemoffset.dylib.so
 vendor/lib64/libmeters-ns.so
 vendor/lib64/libmeters.so
@@ -2243,7 +2243,7 @@ vendor/lib64/libsegmentationeffect_capture.uniplugin@1.0.so
 vendor/lib64/libsfeShiftExtrapolation.so
 vendor/lib64/libsfp_sensor.so
 vendor/lib64/libsfp_teegw.so
-vendor/lib64/libsfplugin_ccodec_utils.so
+-vendor/lib64/libsfplugin_ccodec_utils.so
 vendor/lib64/libsgutils2.so
 vendor/lib64/libshctrl.so
 vendor/lib64/libshotsuggestion.so
