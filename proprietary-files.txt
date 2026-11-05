@@ -5,7 +5,7 @@ vendor/bin/adsprpcd
 vendor/etc/init/vendor.qti.adsprpc-guestos-service.rc
 vendor/lib64/libadsp_default_listener.so
 vendor/lib64/libadsprpc.so
-vendor/lib64/libvmmem.so
+-vendor/lib64/libvmmem.so
 
 # ADSP modules
 vendor/lib/rfsa/adsp/libdsp_streamer_binning.so
@@ -180,7 +180,7 @@ vendor/lib64/libmdmdetect.so
 vendor/lib64/libqmi.so
 vendor/lib64/libqmi_client_qmux.so
 vendor/lib64/libqmiservices.so
-vendor/lib64/libqti_vndfwk_detect_vendor.so
+-vendor/lib64/libqti_vndfwk_detect_vendor.so
 vendor/lib64/libsoc_helper.so
 vendor/lib64/vendor.samsung.hardware.bluetooth-V1-ndk.so
 
@@ -206,7 +206,7 @@ vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so
 vendor/lib64/vendor.samsung.hardware.bluetooth.audio-V2-ndk.so
 
 # Boot
-vendor/bin/hw/android.hardware.boot-service.qti
+-vendor/bin/hw/android.hardware.boot-service.qti
 vendor/etc/init/android.hardware.boot-service.qti.rc
 vendor/lib64/libboot_control_qti.so
 vendor/lib64/librecovery_updater.so
@@ -951,7 +951,7 @@ vendor/etc/powerhint.xml
 vendor/lib64/libperfconfig.so
 vendor/lib64/libperfioctl.so
 vendor/lib64/libq-perflog.so
-vendor/lib64/libqti-perfd-client.so
+-vendor/lib64/libqti-perfd-client.so
 vendor/lib64/libqti-perfd.so
 vendor/lib64/libqti-s3tf.so
 vendor/lib64/libqti-scenariod.so
@@ -1040,7 +1040,7 @@ vendor/lib64/libqmi_client_helper.so
 vendor/lib64/libqmi_csi.so
 vendor/lib64/libqsocket.so
 vendor/lib64/libril_sem.so
-vendor/lib64/librmnetctl.so
+-vendor/lib64/librmnetctl.so
 vendor/lib64/libsec-ril.so
 vendor/lib64/libsecril_wrapper.so
 vendor/lib64/libvkmanager_vendor.so
@@ -1286,7 +1286,7 @@ vendor/lib64/vendor.qti.hardware.trustedui-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.trustedui@1.0.so
 
 # USB
-vendor/bin/hw/android.hardware.usb-service.qti
+-vendor/bin/hw/android.hardware.usb-service.qti
 vendor/etc/init/android.hardware.usb-service.qti.rc
 vendor/etc/vintf/manifest/android.hardware.usb-service.qti.xml
 
@@ -1349,7 +1349,7 @@ vendor/bin/hw/samsung.software.media.c2@1.0-service
 vendor/bin/hw/secaudiohalaidl
 vendor/bin/hw/vendor.qti.MemHal-service
 -vendor/bin/hw/vendor.qti.hardware.display.demura-service
-vendor/bin/hw/vendor.qti.hardware.memtrack-service
+-vendor/bin/hw/vendor.qti.hardware.memtrack-service
 vendor/bin/hw/vendor.samsung.hardware.authfw-service
 vendor/bin/hw/vendor.samsung.hardware.biometrics.face-service
 vendor/bin/hw/vendor.samsung.hardware.biometrics.fingerprint-service
@@ -1434,7 +1434,7 @@ vendor/bin/lowirpcd
 vendor/bin/mm-audio-ftm
 vendor/bin/nativechitest
 vendor/bin/nativehaltest
-vendor/bin/nqnfcinfo
+-vendor/bin/nqnfcinfo
 vendor/bin/pktlogconf
 vendor/bin/pm-proxy
 vendor/bin/pm-service
@@ -1471,7 +1471,7 @@ vendor/bin/ubwcconvert
 vendor/bin/ubwcp_test64
 vendor/bin/utility_cache_test.tflite
 vendor/bin/vaultkeeperd
-vendor/bin/vendor.qti.qspa-service
+-vendor/bin/vendor.qti.qspa-service
 vendor/bin/vendor.samsung.hardware.security.engmode-service
 vendor/bin/vendor.samsung.hardware.security.fkeymaster-service
 vendor/bin/vendor.samsung.hardware.security.hdcp.wifidisplay-service
@@ -1713,7 +1713,7 @@ vendor/etc/sysconfig/cacert-oem-defined-uids.xml
 vendor/etc/sysconfig/vendor-apex-allowlist.xml
 vendor/etc/vintf/manifest/audioeffectservice_qti.xml
 vendor/etc/vintf/manifest/bluetooth_hci.xml
-vendor/etc/vintf/manifest/boot-service.qti.xml
+-vendor/etc/vintf/manifest/boot-service.qti.xml
 vendor/etc/vintf/manifest/c2_manifest_vendor_audio.xml
 vendor/etc/vintf/manifest/cacert-saidl.xml
 vendor/etc/vintf/manifest/converter_manifest.xml
@@ -2312,7 +2312,7 @@ vendor/lib64/libvideoutils.so
 vendor/lib64/libvk_cass_interface.so
 vendor/lib64/libvkservice.so
 -vendor/lib64/libvndfwk_detect_jni.qti.so
-vendor/lib64/libvndfwk_detect_jni.qti_vendor.so
+-vendor/lib64/libvndfwk_detect_jni.qti_vendor.so
 vendor/lib64/libwpa_drv_oem.so
 vendor/lib64/libwsmd_functions.so
 -vendor/lib64/libz_stable.so
