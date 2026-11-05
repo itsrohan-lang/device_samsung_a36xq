@@ -1,0 +1,4 @@
+# Allow vendor_init to set attributes and permissions on Samsung sysfs nodes
+allow vendor_init sysfs_sec_battery:file rw_file_perms;
+allow vendor_init sysfs_sec_touch:file rw_file_perms;
+allow vendor_init sysfs_sec_vibrator:file rw_file_perms;

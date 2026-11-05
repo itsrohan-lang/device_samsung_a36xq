@@ -10,9 +10,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 
 PRODUCT_PACKAGES += \
-    android.hardware.boot@1.2-impl \
-    android.hardware.boot@1.2-impl.recovery \
     android.hardware.boot-service.default \
+    android.hardware.boot-service.default.recovery \
     android.hardware.fastboot-service.default
 
 PRODUCT_PACKAGES += \
@@ -41,18 +40,18 @@ PRODUCT_SHIPPING_API_LEVEL := 35
 
 # fastbootd
 PRODUCT_PACKAGES += \
-    android.hardware.fastboot@1.1-impl-mock \
     fastbootd
 
 # Health
 PRODUCT_PACKAGES += \
-    android.hardware.health@2.1-impl \
-    android.hardware.health-service.cuttlefish
+    android.hardware.health-service.cuttlefish \
+    android.hardware.health-service.cuttlefish_recovery
 
 # Kernel
 PRODUCT_ENABLE_UFFD_GC := true
 
 # Overlays
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
 # Partitions
