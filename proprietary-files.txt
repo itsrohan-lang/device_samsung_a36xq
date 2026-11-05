@@ -62,7 +62,7 @@ vendor/lib64/soundfx/libswspatializeraidl.so
 vendor/lib64/soundfx/libvisualizeraidl.so
 -vendor/lib64/audioclient-types-aidl-cpp.so
 -vendor/lib64/audiopolicy-types-aidl-cpp.so
-vendor/lib64/framework-permission-aidl-cpp.so
+-vendor/lib64/framework-permission-aidl-cpp.so
 vendor/lib64/lib_SamsungRec_07010.so
 vendor/lib64/lib_SoundAlive_3DPosition_ver202.so
 vendor/lib64/lib_SoundAlive_AlbumArt_ver105.so
