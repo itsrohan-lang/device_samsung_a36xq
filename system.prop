@@ -220,3 +220,14 @@ sys.hqm.support=true
 sys.qca1530=detect
 vendor.mm.enable.qcom_parser=16777215
 
+# IMS, VoLTE, VoWiFi, VoNR
+persist.dbg.volte_avail_ovr=1
+persist.dbg.vt_avail_ovr=1
+persist.dbg.wfc_avail_ovr=1
+persist.radio.calls.on.ims=1
+persist.radio.jbims=1
+persist.radio.vrte_logic=2
+persist.radio.data_ltd_sys_ind=1
+persist.radio.data_con_rprt=1
+persist.sys.phh.ims.flavour=samsung
+

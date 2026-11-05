@@ -2,6 +2,7 @@
 /sys/class/sec/sec-battery(/.*)?            u:object_r:sysfs_sec_battery:s0
 /sys/class/sec/sec_vibrator(/.*)?           u:object_r:sysfs_sec_vibrator:s0
 /sys/class/sec/tsp(/.*)?                    u:object_r:sysfs_sec_touch:s0
+/sys/class/fingerprint(/.*)?                u:object_r:sysfs_fingerprint:s0
 
 # Qualcomm block devices
 /dev/block/bootdevice/by-name/qmcs          u:object_r:vendor_qmcs_file:s0

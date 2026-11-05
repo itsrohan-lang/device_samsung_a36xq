@@ -2,6 +2,7 @@
 type sysfs_sec_battery, sysfs_type, fs_type;
 type sysfs_sec_touch, sysfs_type, fs_type;
 type sysfs_sec_vibrator, sysfs_type, fs_type;
+type sysfs_fingerprint, sysfs_type, fs_type;
 
 # Block files
 type vendor_qmcs_file, file_type;
