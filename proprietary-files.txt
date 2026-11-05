@@ -37,7 +37,7 @@ vendor/lib64/rfs/dsp/libsw2dlut_dsp_skel.so
 vendor/lib64/hw/audio.primary.default.so
 vendor/lib64/hw/audio.r_submix.default.so
 vendor/lib64/hw/audio.usb.default.so
-vendor/lib64/libalsautils.so
+-vendor/lib64/libalsautils.so
 
 # Audio (FX modules)
 vendor/lib64/soundfx/libaudioeffectoffload.so
@@ -69,7 +69,7 @@ vendor/lib64/lib_SoundAlive_AlbumArt_ver105.so
 vendor/lib64/lib_SoundAlive_play_plus_ver900.so
 vendor/lib64/lib_SoundBooster_ver2060.so
 vendor/lib64/libagmclient.so
-vendor/lib64/libalsautilsv2.so
+-vendor/lib64/libalsautilsv2.so
 vendor/lib64/libar-acdb.so
 vendor/lib64/libar-gpr.so
 vendor/lib64/libar-gsl.so
@@ -2024,8 +2024,8 @@ vendor/lib64/libcdfw.so
 vendor/lib64/libcdfw_remote_api.so
 vendor/lib64/libcfg_if.dylib.so
 vendor/lib64/libclconverter.so
-vendor/lib64/libcodec2_hidl@1.1.so
-vendor/lib64/libcodec2_hidl@1.2.so
+-vendor/lib64/libcodec2_hidl@1.1.so
+-vendor/lib64/libcodec2_hidl@1.2.so
 vendor/lib64/libcodec2_sec_aacdec.so
 vendor/lib64/libcodec2_sec_aacenc.so
 vendor/lib64/libcodec2_sec_amrnbdec.so
@@ -2135,7 +2135,7 @@ vendor/lib64/libmapdata_api.so
 vendor/lib64/libmctfengine_stub.so
 vendor/lib64/libmdsprpc.so
 vendor/lib64/libmediaconverter.so
-vendor/lib64/libmediautils_vendor.so
+-vendor/lib64/libmediautils_vendor.so
 -vendor/lib64/libmeminfo.so
 vendor/lib64/libmemoffset.dylib.so
 vendor/lib64/libmeters-ns.so
