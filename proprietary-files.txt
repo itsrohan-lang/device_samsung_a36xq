@@ -2287,7 +2287,7 @@ vendor/lib64/libsynergy_loc_api.so
 vendor/lib64/libsysmon_cdsp_skel.so
 -vendor/lib64/libsystem_properties_bindgen_sys.dylib.so
 vendor/lib64/libtfestriping.so
-vendor/lib64/libtflite.so
+-vendor/lib64/libtflite.so
 -vendor/lib64/libthiserror.dylib.so
 vendor/lib64/libtlc_direct_comm_iccc.so
 vendor/lib64/libtlpd.so
