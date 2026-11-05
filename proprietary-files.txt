@@ -60,8 +60,8 @@ vendor/lib64/soundfx/libswdapaidl.so
 vendor/lib64/soundfx/libswspatializer.so
 vendor/lib64/soundfx/libswspatializeraidl.so
 vendor/lib64/soundfx/libvisualizeraidl.so
-vendor/lib64/audioclient-types-aidl-cpp.so
-vendor/lib64/audiopolicy-types-aidl-cpp.so
+-vendor/lib64/audioclient-types-aidl-cpp.so
+-vendor/lib64/audiopolicy-types-aidl-cpp.so
 vendor/lib64/framework-permission-aidl-cpp.so
 vendor/lib64/lib_SamsungRec_07010.so
 vendor/lib64/lib_SoundAlive_3DPosition_ver202.so
@@ -96,7 +96,7 @@ vendor/lib64/libspatializerparamstorage.so
 vendor/lib64/libspeakercalibration.so
 vendor/lib64/libtinyalsav2.so
 vendor/lib64/libvibratorutils.so
-vendor/lib64/spatializer-aidl-cpp.so
+-vendor/lib64/spatializer-aidl-cpp.so
 vendor/lib64/vendor.qti.hardware.agm-V1-ndk.so
 
 # Audio configs
@@ -2318,7 +2318,7 @@ vendor/lib64/libwsmd_functions.so
 vendor/lib64/libz_stable.so
 vendor/lib64/libzoomroi.samsung.so
 vendor/lib64/libzoomroi_lite.samsung.so
-vendor/lib64/qti-audio-types-aidl-V1-ndk.so
+-vendor/lib64/qti-audio-types-aidl-V1-ndk.so
 vendor/lib64/qti.video.utils.videobufferlayout.so
 vendor/lib64/service-listener-ext-aidl-V1-ndk.so
 vendor/lib64/unihal_filter_unit.so
