@@ -829,7 +829,7 @@ vendor/lib64/hw/local_time.default.so
 
 # Media
 system/etc/seccomp_policy/mediacodec.policy
-system/lib64/graphicbuffersource-aidl-ndk.so
+-system/lib64/graphicbuffersource-aidl-ndk.so
 -system/lib64/libaconfig_storage_read_api_cc.so
 system/lib64/libdatasource.so
 system/lib64/libdatasource_local_cache.so
