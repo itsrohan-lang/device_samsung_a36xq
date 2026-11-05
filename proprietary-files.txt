@@ -196,7 +196,7 @@ vendor/lib64/libbluetooth_audio_session_aidl.so
 vendor/lib64/libbluetooth_audio_session_aidl_qti.so
 vendor/lib64/libbluetooth_audio_session_qti.so
 vendor/lib64/libbluetooth_audio_session_qti_2_1.so
-vendor/lib64/libflatbuffers-cpp.so
+-vendor/lib64/libflatbuffers-cpp.so
 vendor/lib64/libsehbluetooth_audio_session_aidl.so
 vendor/lib64/server_configurable_flags.so
 vendor/lib64/vendor.qti.hardware.bluetooth_audio@2.0.so
@@ -2315,7 +2315,7 @@ vendor/lib64/libvkservice.so
 vendor/lib64/libvndfwk_detect_jni.qti_vendor.so
 vendor/lib64/libwpa_drv_oem.so
 vendor/lib64/libwsmd_functions.so
-vendor/lib64/libz_stable.so
+-vendor/lib64/libz_stable.so
 vendor/lib64/libzoomroi.samsung.so
 vendor/lib64/libzoomroi_lite.samsung.so
 -vendor/lib64/qti-audio-types-aidl-V1-ndk.so
