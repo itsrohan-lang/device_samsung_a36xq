@@ -221,14 +221,19 @@ def parse_proprietary_files():
     return positive, negative
 
 
+def blob_path(entry):
+    """Strip the `|ARG=value` suffix used by extract-utils."""
+    return entry.split("|", 1)[0]
+
+
 def check_blobs(positive, negative):
     if not os.path.isdir(VENDOR_BLOBS):
         warn(f"vendor blob tree not found at {VENDOR_BLOBS}; skipping existence checks")
         return
-    missing = [path for path, _ in positive
-               if not os.path.exists(os.path.join(VENDOR_BLOBS, path))]
+    missing = [blob_path(p) for p, _ in positive
+               if not os.path.exists(os.path.join(VENDOR_BLOBS, blob_path(p)))]
     for path, lineno in positive:
-        full = os.path.join(VENDOR_BLOBS, path)
+        full = os.path.join(VENDOR_BLOBS, blob_path(path))
         if not os.path.exists(full):
             err(f"proprietary-files.txt:{lineno}: blob missing from vendor tree: {path}")
         elif os.path.getsize(full) == 0:
@@ -289,7 +294,7 @@ def dt_installed_vendor_paths():
 
 
 def check_collisions(positive):
-    blob_paths = {path for path, _ in positive}
+    blob_paths = {blob_path(p) for p, _ in positive}
     dests = dt_installed_vendor_paths()
     clashes = sorted(set(dests) & blob_paths)
     for c in clashes:
