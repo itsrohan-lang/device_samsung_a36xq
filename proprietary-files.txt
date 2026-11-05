@@ -370,7 +370,7 @@ vendor/lib64/libcom.qti.chinodeutils.so
 vendor/lib64/libdisplayconfig.qti.so
 vendor/lib64/libgralloc.qti.so
 vendor/lib64/libgralloccore.so
-vendor/lib64/libgrallocusage.so
+-vendor/lib64/libgrallocusage.so
 vendor/lib64/libgrallocutils.so
 vendor/lib64/libhdr10plus.so
 vendor/lib64/libmapperutils.so
