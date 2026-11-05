@@ -1,0 +1,8 @@
+# Samsung sysfs nodes.
+#
+# sysfs is a pseudo filesystem and cannot hold SELinux xattrs, so these nodes
+# must be labelled with genfscon (paths are relative to /sys).
+genfscon sysfs /class/sec/sec-battery        u:object_r:sysfs_sec_battery:s0
+genfscon sysfs /class/sec/sec_vibrator       u:object_r:sysfs_sec_vibrator:s0
+genfscon sysfs /class/sec/tsp                u:object_r:sysfs_sec_touch:s0
+genfscon sysfs /class/fingerprint            u:object_r:sysfs_fingerprint:s0

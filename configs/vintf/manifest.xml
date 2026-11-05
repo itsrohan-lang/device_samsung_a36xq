@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Device manifest for the Samsung Galaxy A36 5G (a36xq).
+
+    The stock vendor image already ships one fragment per prebuilt HAL under
+    /vendor/etc/vintf/manifest/*.xml (all of them are in proprietary-files.txt),
+    so nothing that a prebuilt service declares has to be repeated here.
+
+    What is left is the content of the stock `manifest_parrot.xml`, which the
+    stock build never merged into the vendor image, plus the vendor sepolicy
+    version the prebuilt policy blobs were compiled with.
+-->
+<manifest version="8.0" type="device" target-level="202404">
+    <!-- vendor/samsung/hal-server/bluetooth, only declared in manifest_parrot.xml -->
+    <hal format="aidl">
+        <name>vendor.samsung.hardware.bluetooth</name>
+        <fqname>ISehBluetooth/default</fqname>
+    </hal>
+
+    <sepolicy>
+        <version>202404</version>
+    </sepolicy>
+</manifest>

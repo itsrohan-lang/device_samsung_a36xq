@@ -2,17 +2,19 @@
 # SPDX-FileCopyrightText: The LineageOS Project
 # SPDX-License-Identifier: Apache-2.0
 #
+# Samsung Galaxy A36 5G (SM-A366E / a36xq)
+#
+# Model: the whole vendor side (HALs, firmware, configs) comes from the stock
+# firmware through vendor/samsung/a36xq. The device tree therefore must NOT
+# build the Qualcomm HALs from source - it only builds system/product/system_ext
+# plus the ramdisk and the handful of vendor files listed below.
+#
 
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
-# A/B
-$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
-
-PRODUCT_PACKAGES += \
-    android.hardware.boot-service.default \
-    android.hardware.boot-service.default.recovery \
-    android.hardware.fastboot-service.default
+# A/B (ramdisk lives in vendor_boot)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
 
 PRODUCT_PACKAGES += \
     update_engine \
@@ -35,32 +37,28 @@ PRODUCT_PACKAGES += \
     checkpoint_gc \
     otapreopt_script
 
-# API levels
+# API level
 PRODUCT_SHIPPING_API_LEVEL := 35
 
 # fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
 
-# Health
-PRODUCT_PACKAGES += \
-    android.hardware.health-service.cuttlefish \
-    android.hardware.health-service.cuttlefish_recovery
-
 # Kernel
 PRODUCT_ENABLE_UFFD_GC := true
 
-# Overlays
+# Overlays (legacy device overlays)
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
+PRODUCT_BUILD_SUPER_PARTITION := true
 
 # Product characteristics
 PRODUCT_CHARACTERISTICS := phone
 
-# Rootdir
+# Init scripts and configuration
 PRODUCT_PACKAGES += \
     coresight_reset_source_sink.sh \
     hdm_status.sh \
@@ -93,7 +91,7 @@ PRODUCT_PACKAGES += \
     qca6234-service.sh \
     start_subsys.sh \
     system_dlkm_modprobe.sh \
-    vendor_modprobe.sh \
+    vendor_modprobe.sh
 
 PRODUCT_PACKAGES += \
     fstab.emmc \
@@ -109,49 +107,39 @@ PRODUCT_PACKAGES += \
     init.samsung.display.rc \
     init.samsung.power.rc \
     init.samsung.rc \
-    init.target.rc \
+    init.target.rc
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/etc/fstab.emmc:$(TARGET_VENDOR_RAMDISK_OUT)/first_stage_ramdisk/fstab.emmc
+    $(LOCAL_PATH)/rootdir/etc/fstab.emmc:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.emmc
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
+    $(LOCAL_PATH) \
+    vendor/samsung/a36xq \
+    vendor/samsung/camera
 
-# Audio
-PRODUCT_PACKAGES += \
-    android.hardware.bluetooth.audio-impl \
-    audio.bluetooth.default \
-    audio.r_submix.default \
-    audio.usb.default \
-    tinymix
-
-# Biometrics (Fingerprint)
+# Permissions
+#
+# Most device feature permissions ship inside the stock vendor image
+# (vendor/etc/permissions). Only the ones the stock tree does not carry are
+# added here - never copy a file to a path a blob already occupies, the build
+# fails on the duplicate.
 PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \
+    frameworks/native/data/etc/android.hardware.audio.pro.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.pro.xml \
+    frameworks/native/data/etc/android.hardware.camera.concurrent.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.concurrent.xml \
+    frameworks/native/data/etc/android.hardware.camera.raw.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.raw.xml \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml \
-    frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.biometrics.face.xml
+    frameworks/native/data/etc/android.hardware.sensor.proximity.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.proximity.xml \
+    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.gsm.xml \
+    frameworks/native/data/etc/android.hardware.telephony.ims.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.ims.xml \
+    frameworks/native/data/etc/android.hardware.telephony.ims.singlereg.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.ims.singlereg.xml
 
 # NFC
 PRODUCT_PACKAGES += \
     NfcNci \
     Tag \
     com.android.nfc_extras
-
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.nfc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.xml \
-    frameworks/native/data/etc/android.hardware.nfc.hce.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hce.xml \
-    frameworks/native/data/etc/android.hardware.nfc.hcef.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hcef.xml \
-    frameworks/native/data/etc/android.hardware.nfc.ese.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.ese.xml
-
-# Telephony & IMS
-PRODUCT_PACKAGES += \
-    secril_config_svc \
-    sehradiomanager
-
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.gsm.xml \
-    frameworks/native/data/etc/android.hardware.telephony.ims.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.ims.xml \
-    frameworks/native/data/etc/android.hardware.telephony.ims.singlereg.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.ims.singlereg.xml
 
 # Samsung Camera (vendor/samsung/camera)
 $(call inherit-product-if-exists, vendor/samsung/camera/camera.mk)
