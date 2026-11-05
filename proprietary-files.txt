@@ -75,7 +75,7 @@ vendor/lib64/libar-gpr.so
 vendor/lib64/libar-gsl.so
 vendor/lib64/libar-pal.so
 vendor/lib64/libaudio_aidl_conversion_common_ndk.so
-vendor/lib64/libaudioaidlcommon.so
+-vendor/lib64/libaudioaidlcommon.so
 vendor/lib64/libdiag.so
 vendor/lib64/libfloatingfeature.so
 vendor/lib64/libjson.so
@@ -95,7 +95,7 @@ vendor/lib64/libsecnativefeature.so
 vendor/lib64/libspatializerparamstorage.so
 vendor/lib64/libspeakercalibration.so
 -vendor/lib64/libtinyalsav2.so
-vendor/lib64/libvibratorutils.so
+-vendor/lib64/libvibratorutils.so
 -vendor/lib64/spatializer-aidl-cpp.so
 vendor/lib64/vendor.qti.hardware.agm-V1-ndk.so
 
@@ -191,14 +191,14 @@ vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.1-impl.so
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@1.1-impl.so
 vendor/lib64/android.hardware.bluetooth.audio-impl.so
-vendor/lib64/libaconfig_storage_read_api_cc.so
-vendor/lib64/libbluetooth_audio_session_aidl.so
+-vendor/lib64/libaconfig_storage_read_api_cc.so
+-vendor/lib64/libbluetooth_audio_session_aidl.so
 vendor/lib64/libbluetooth_audio_session_aidl_qti.so
 vendor/lib64/libbluetooth_audio_session_qti.so
 vendor/lib64/libbluetooth_audio_session_qti_2_1.so
 -vendor/lib64/libflatbuffers-cpp.so
 vendor/lib64/libsehbluetooth_audio_session_aidl.so
-vendor/lib64/server_configurable_flags.so
+-vendor/lib64/server_configurable_flags.so
 vendor/lib64/vendor.qti.hardware.bluetooth_audio@2.0.so
 vendor/lib64/vendor.qti.hardware.bluetooth_audio@2.1.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
@@ -1116,8 +1116,8 @@ vendor/etc/init/android.hardware.security.keymint-service.rc
 vendor/etc/vintf/manifest/android.hardware.security.keymint-service_V3.xml
 vendor/etc/vintf/manifest/android.hardware.security.secureclock-service.xml
 vendor/etc/vintf/manifest/android.hardware.security.sharedsecret-service.xml
-vendor/lib64/libcppbor.so
-vendor/lib64/libcppbor_external.so
+-vendor/lib64/libcppbor.so
+-vendor/lib64/libcppbor_external.so
 -vendor/lib64/libkeymaster4_1support.so
 vendor/lib64/libskeymint10device.so
 vendor/lib64/libskeymint_cli.so
@@ -1991,9 +1991,9 @@ vendor/lib64/libagmmixer.so
 vendor/lib64/libaidenoiser.so
 vendor/lib64/libaidenoiserv2.so
 vendor/lib64/libaivideocentral.arcsoft.so
-vendor/lib64/libandroid_log_sys.dylib.so
+-vendor/lib64/libandroid_log_sys.dylib.so
 -vendor/lib64/libandroid_logger.dylib.so
-vendor/lib64/libanyhow.dylib.so
+-vendor/lib64/libanyhow.dylib.so
 vendor/lib64/libats.so
 vendor/lib64/libaudio_log_utils.so
 vendor/lib64/libaudiochargerlistener.so
@@ -2007,7 +2007,7 @@ vendor/lib64/libbatching.so
 vendor/lib64/libbatterylistener.so
 vendor/lib64/libbeautyshot.arcsoft.so
 -vendor/lib64/libbinderdebug.so
-vendor/lib64/libbitflags.dylib.so
+-vendor/lib64/libbitflags.dylib.so
 vendor/lib64/libbitmlengine.so
 vendor/lib64/libbluetooth_audio_session.so
 vendor/lib64/libbodyid.arcsoft.so
@@ -2022,7 +2022,7 @@ vendor/lib64/libcapiv2svarnnvendor.so
 vendor/lib64/libcapiv2uvvendor.so
 vendor/lib64/libcdfw.so
 vendor/lib64/libcdfw_remote_api.so
-vendor/lib64/libcfg_if.dylib.so
+-vendor/lib64/libcfg_if.dylib.so
 vendor/lib64/libclconverter.so
 -vendor/lib64/libcodec2_hidl@1.1.so
 -vendor/lib64/libcodec2_hidl@1.2.so
@@ -2041,7 +2041,7 @@ vendor/lib64/libcodec2_soft_ac4dec.so
 -vendor/lib64/libcodec2_soft_common.so
 vendor/lib64/libcodec2_soft_eac3dec.so
 vendor/lib64/libcolor-default.so
-vendor/lib64/libcppcose_rkp.so
+-vendor/lib64/libcppcose_rkp.so
 vendor/lib64/libdiagjni.so
 vendor/lib64/libdigital-dimming.so
 vendor/lib64/libdisp-aba.so
@@ -2059,7 +2059,7 @@ vendor/lib64/libengmode15.so
 vendor/lib64/libengmode2lite.so
 vendor/lib64/libengmode_server.so
 vendor/lib64/libengmode_tlc.so
-vendor/lib64/libenv_logger.dylib.so
+-vendor/lib64/libenv_logger.dylib.so
 vendor/lib64/libevent_finder.uniplugin@1.0.so
 vendor/lib64/libexifa.camera.samsung.so
 vendor/lib64/libface_landmark.arcsoft.so
@@ -2094,7 +2094,7 @@ vendor/lib64/libhwvault.so
 vendor/lib64/libhypermotion_core.so
 vendor/lib64/libhypermotion_interface.so
 vendor/lib64/libimage_enhancement.arcsoft.so
-vendor/lib64/libimage_io.so
+-vendor/lib64/libimage_io.so
 vendor/lib64/libimagecodec_native.quram.so
 vendor/lib64/libimgproc_sw.unifunc@common.so
 vendor/lib64/libipebpsstriping.so
@@ -2109,7 +2109,7 @@ vendor/lib64/libkcl.so
 vendor/lib64/libkernelmanager.so
 vendor/lib64/libkeystore-wifi-hidl.so
 vendor/lib64/liblearningmodule.so
-vendor/lib64/liblibc.dylib.so
+-vendor/lib64/liblibc.dylib.so
 vendor/lib64/liblightninglaunches.so
 vendor/lib64/liblistensoundmodel2vendor.so
 vendor/lib64/liblistensoundmodelaidl.so
@@ -2129,15 +2129,15 @@ vendor/lib64/liblocation_api_msg.so
 vendor/lib64/liblocation_client_api.so
 vendor/lib64/liblocation_integration_api.so
 vendor/lib64/liblocdiagiface.so
-vendor/lib64/liblog_rust.dylib.so
-vendor/lib64/liblogger.dylib.so
+-vendor/lib64/liblog_rust.dylib.so
+-vendor/lib64/liblogger.dylib.so
 vendor/lib64/libmapdata_api.so
 vendor/lib64/libmctfengine_stub.so
 vendor/lib64/libmdsprpc.so
 vendor/lib64/libmediaconverter.so
 -vendor/lib64/libmediautils_vendor.so
 -vendor/lib64/libmeminfo.so
-vendor/lib64/libmemoffset.dylib.so
+-vendor/lib64/libmemoffset.dylib.so
 vendor/lib64/libmeters-ns.so
 vendor/lib64/libmeters.so
 vendor/lib64/libmfGhostDetection.so
@@ -2150,9 +2150,9 @@ vendor/lib64/libmmrtpencoder_vendor.so
 vendor/lib64/libmultiobject_tracker.so
 vendor/lib64/libnanopb.so
 vendor/lib64/libnative-api.so
-vendor/lib64/libnix.dylib.so
+-vendor/lib64/libnix.dylib.so
 vendor/lib64/liboemaids_vendor.so
-vendor/lib64/libonce_cell.dylib.so
+-vendor/lib64/libonce_cell.dylib.so
 vendor/lib64/libopestriping.so
 vendor/lib64/libops.so
 vendor/lib64/libpadm.so
@@ -2221,7 +2221,7 @@ vendor/lib64/librecovery_updater_msm.so
 vendor/lib64/libreffeature.so
 vendor/lib64/librpmb.so
 vendor/lib64/librtts_client.so
-vendor/lib64/librustutils.dylib.so
+-vendor/lib64/librustutils.dylib.so
 vendor/lib64/libruy.so
 vendor/lib64/libsamsungcamerahal.so
 vendor/lib64/libsamsungcamerahalutils.so
@@ -2288,7 +2288,7 @@ vendor/lib64/libsysmon_cdsp_skel.so
 -vendor/lib64/libsystem_properties_bindgen_sys.dylib.so
 vendor/lib64/libtfestriping.so
 vendor/lib64/libtflite.so
-vendor/lib64/libthiserror.dylib.so
+-vendor/lib64/libthiserror.dylib.so
 vendor/lib64/libtlc_direct_comm_iccc.so
 vendor/lib64/libtlpd.so
 vendor/lib64/libtlpd_configmgr.so
