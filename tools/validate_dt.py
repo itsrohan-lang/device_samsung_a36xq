@@ -81,7 +81,7 @@ def strip_make_comments(text):
 
 # ---------------------------------------------------------------- makefiles
 MAKEFILES = ["BoardConfig.mk", "device.mk", "lineage_a36xq.mk",
-             "AndroidProducts.mk", "Android.mk"]
+             "custom_a36xq.mk", "AndroidProducts.mk", "Android.mk"]
 BPFILES = ["Android.bp", "rootdir/Android.bp"]
 if os.path.isdir(os.path.join(DT, "configs")):
     pass
@@ -315,7 +315,7 @@ def in_tree_modules():
 
 def product_packages():
     pkgs = []
-    for mf in ("device.mk", "lineage_a36xq.mk"):
+    for mf in ("device.mk", "lineage_a36xq.mk", "custom_a36xq.mk"):
         p = os.path.join(DT, mf)
         if not os.path.exists(p):
             continue

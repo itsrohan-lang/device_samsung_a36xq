@@ -80,10 +80,16 @@ What is genuinely different:
 
 | | LineageOS 24.0 | PixelOS seventeen |
 | :--- | :--- | :--- |
-| common product config | `vendor/lineage/config/common_full_phone.mk` | same path (PixelOS keeps the namespace) |
+| product makefile | `lineage_a36xq.mk` | `custom_a36xq.mk` (both ship, both work) |
+| common product config | `vendor/lineage/config/common_full_phone.mk` | `vendor/custom/config/common_full_phone.mk` |
 | `extract-utils` | `tools/extract-utils` | `vendor/pixel/extract-utils` |
 | qcom sepolicy | `device/qcom/sepolicy_vndr/` | same path, resolved through a manifest linkfile |
-| launch target | `lineage_a36xq-userdebug` | same |
+| launch target | `lineage_a36xq-userdebug` | `custom_a36xq-userdebug` (`breakfast a36xq`) |
+
+PixelOS renames the product to `custom_<device>`: `vendor/custom/build/envsetup.sh`
+runs `lunch custom_$target-…`, so the product name must be `custom_a36xq`.
+`vendor/custom/config/common.mk` also asserts that
+`device/*/a36xq/custom_a36xq.mk` exists.
 
 `extract-files.py` sets `PYTHONPATH` to both extract-utils locations, so blob
 re-extraction works on either ROM.
