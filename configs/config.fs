@@ -6,12 +6,9 @@
 # Only Daemons that the prebuilt vendor image actually ships are listed here;
 # fs_config silently ignores entries for files that do not exist.
 #
-
-[root/]
-mode: 0755
-user: AID_ROOT
-group: AID_ROOT
-caps: 0
+# Paths are relative to the partition root - never use a "[root/]" entry, it
+# would create a /root directory inside every partition image.
+#
 
 [efs/]
 mode: 0771
@@ -59,12 +56,6 @@ caps: 0
 mode: 0771
 user: AID_MEDIA
 group: AID_MEDIA
-caps: 0
-
-[firmware-modem/]
-mode: 0771
-user: AID_SYSTEM
-group: AID_SYSTEM
 caps: 0
 
 # Qualcomm vendor AIDs
