@@ -811,15 +811,15 @@ vendor/etc/xtwifi.conf
 vendor/etc/init/android.hardware.identity-service-qti.rc
 
 # IPA
-vendor/bin/ipacm
+-vendor/bin/ipacm
 vendor/bin/ipacm-diag
 vendor/etc/init/ipacm-diag.rc
 vendor/etc/init/ipacm.rc
 vendor/etc/IPACM_cfg.xml
-vendor/lib64/libipanat.so
+-vendor/lib64/libipanat.so
 vendor/lib64/libnetfilter_conntrack.so
 vendor/lib64/libnfnetlink.so
-vendor/lib64/liboffloadhal.so
+-vendor/lib64/liboffloadhal.so
 
 # Light
 vendor/bin/hw/android.hardware.lights-service.samsung
@@ -1314,8 +1314,8 @@ vendor/etc/vintf/manifest/android.hardware.wifi.hostapd.xml
 vendor/etc/vintf/manifest/android.hardware.wifi.supplicant.xml
 vendor/lib64/libkeystore-engine-wifi-hidl.so
 vendor/lib64/libpasn.so
-vendor/lib64/libwifi-hal-ctrl.so
-vendor/lib64/libwifi-hal-qcom.so
+-vendor/lib64/libwifi-hal-ctrl.so
+-vendor/lib64/libwifi-hal-qcom.so
 vendor/lib64/libwifi-hal.so
 vendor/lib64/vendor.qti.hardware.wigig.netperftuner@1.0.so
 vendor/lib64/vendor.samsung.hardware.wifi.hostapd-V1-ndk.so
