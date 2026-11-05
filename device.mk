@@ -77,7 +77,6 @@ PRODUCT_PACKAGES += \
     init.qcom.sensors.sh \
     init.qcom.sh \
     init.qcom.usb.sh \
-    init.qti.display_boot.sh \
     init.qti.kernel.debug-parrot.sh \
     init.qti.kernel.debug-ravelin.sh \
     init.qti.kernel.debug.sh \
