@@ -2036,7 +2036,7 @@ vendor/lib64/libcodec2_sec_mp3dec.so
 vendor/lib64/libcodec2_sec_mp4vdec.so
 vendor/lib64/libcodec2_sec_soft_common.so
 vendor/lib64/libcodec2_sec_vc1dec.so
-vendor/lib64/libcodec2_simple_component.so
+-vendor/lib64/libcodec2_simple_component.so
 vendor/lib64/libcodec2_soft_ac4dec.so
 vendor/lib64/libcodec2_soft_common.so
 vendor/lib64/libcodec2_soft_eac3dec.so
@@ -2159,7 +2159,7 @@ vendor/lib64/libpadm.so
 vendor/lib64/libpalclient.so
 vendor/lib64/libpalipcservice.so
 vendor/lib64/libperfdb.so
-vendor/lib64/libpsi.so
+-vendor/lib64/libpsi.so
 vendor/lib64/libq3dtools_adreno.so
 vendor/lib64/libqc2audio_base.so
 vendor/lib64/libqc2audio_basecodec.so
