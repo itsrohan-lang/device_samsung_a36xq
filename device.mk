@@ -95,6 +95,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     fstab.emmc \
+    fstab.emmc.ramdisk \
+    fstab.qcom.ramdisk \
     init.a36xq.rc \
     init.qcom.factory.rc \
     init.qcom.rc \
@@ -108,9 +110,6 @@ PRODUCT_PACKAGES += \
     init.samsung.power.rc \
     init.samsung.rc \
     init.target.rc
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/etc/fstab.emmc:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.emmc
 
 # Audio
 #

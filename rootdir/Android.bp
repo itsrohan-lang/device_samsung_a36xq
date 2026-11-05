@@ -294,3 +294,26 @@ prebuilt_etc {
     src: "etc/fstab.emmc",
     vendor: true,
 }
+
+// First-stage fstab.
+//
+// The ramdisk needs the mount table before /system exists. ro.hardware is
+// "qcom", so fs_mgr looks for fstab.qcom; Samsung's own tools look for
+// fstab.emmc. Both names ship with identical content so either lookup succeeds.
+// (TARGET_COPY_OUT_VENDOR_RAMDISK does not exist in the build system - files
+// have to be installed through Soong to land in a ramdisk.)
+prebuilt_etc {
+    name: "fstab.qcom.ramdisk",
+    src: "etc/fstab.emmc",
+    filename: "fstab.qcom",
+    sub_dir: "first_stage_ramdisk",
+    ramdisk: true,
+}
+
+prebuilt_etc {
+    name: "fstab.emmc.ramdisk",
+    src: "etc/fstab.emmc",
+    filename: "fstab.emmc",
+    sub_dir: "first_stage_ramdisk",
+    ramdisk: true,
+}
