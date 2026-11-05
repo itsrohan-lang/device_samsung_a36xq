@@ -74,7 +74,7 @@ vendor/lib64/libar-acdb.so
 vendor/lib64/libar-gpr.so
 vendor/lib64/libar-gsl.so
 vendor/lib64/libar-pal.so
-vendor/lib64/libaudio_aidl_conversion_common_ndk.so
+-vendor/lib64/libaudio_aidl_conversion_common_ndk.so
 -vendor/lib64/libaudioaidlcommon.so
 vendor/lib64/libdiag.so
 vendor/lib64/libfloatingfeature.so
@@ -2222,7 +2222,7 @@ vendor/lib64/libreffeature.so
 vendor/lib64/librpmb.so
 vendor/lib64/librtts_client.so
 -vendor/lib64/librustutils.dylib.so
-vendor/lib64/libruy.so
+-vendor/lib64/libruy.so
 vendor/lib64/libsamsungcamerahal.so
 vendor/lib64/libsamsungcamerahalutils.so
 vendor/lib64/libsamsungcamerahwl_impl.so
@@ -2270,14 +2270,14 @@ vendor/lib64/libsns_device_mode_stub.so
 vendor/lib64/libsns_registry_skel.so
 vendor/lib64/libsoc_helper_jni.so
 vendor/lib64/libsocial_image_enhancement.uniplugin@1.0.so
-vendor/lib64/libsoft_attestation_cert.so
+-vendor/lib64/libsoft_attestation_cert.so
 vendor/lib64/libspl.so
 vendor/lib64/libsrib_CNNInterface.camera.samsung.so
 vendor/lib64/libsrib_humanaware_engine.camera.samsung.so
 vendor/lib64/libssc_default_listener.so
 vendor/lib64/libssd.so
 vendor/lib64/libssengine.uniplugin@1.0.so
-vendor/lib64/libstd.dylib.so
+-vendor/lib64/libstd.dylib.so
 vendor/lib64/libstork_shared.so
 vendor/lib64/libstreamparser.so
 vendor/lib64/libsubsystem_control.so
