@@ -112,6 +112,17 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/fstab.emmc:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.emmc
 
+# Audio
+#
+# The stock vendor only ships audio_policy_configuration_base.xml; audioserver
+# looks for audio_policy_configuration.xml. The base file is a complete policy -
+# the primary module is deliberately absent because it is hosted by the AIDL
+# audio HAL itself (vendor/etc/audio/audio_module_config_primary.xml), which is
+# also why the sku_* variants (broken include of a stub that does not exist on
+# the device) are not used here.
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \

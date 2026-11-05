@@ -6,3 +6,59 @@
 #
 # /dev/block/by-name/qmcs is mounted with an explicit `context=` option in
 # fstab.emmc, so the block device itself needs no rule here.
+
+#
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Executable labels for the prebuilt vendor HALs.
+#
+# The stock vendor init scripts carry no seclabel, so the domain of every
+# HAL is derived from the SELinux label of its binary through
+# init_daemon_domain(). Every binary that AOSP/QCOM policy already labels is
+# deliberately left out of this file.
+#
+
+# Reused AOSP/QTI domains
+/vendor/bin/hw/android\.hardware\.bluetooth@aidl\-service\-qti                   u:object_r:hal_bluetooth_default_exec:s0
+/vendor/bin/hw/android\.hardware\.dumpstate\-service                            u:object_r:hal_dumpstate_default_exec:s0
+/vendor/bin/hw/android\.hardware\.lights\-service\.samsung                       u:object_r:hal_light_default_exec:s0
+/vendor/bin/hw/android\.hardware\.power\.samsung\-service                        u:object_r:hal_power_default_exec:s0
+/vendor/bin/hw/android\.hardware\.weaver\-service\-spu\-qti                       u:object_r:hal_weaver_default_exec:s0
+/vendor/bin/hw/audiohalservice\.qti                                           u:object_r:hal_audio_default_exec:s0
+/vendor/bin/hw/samsung\.software\.media\.c2@1\.0\-service                         u:object_r:mediacodec_exec:s0
+/vendor/bin/hw/secaudiohalaidl                                               u:object_r:hal_audio_default_exec:s0
+/vendor/bin/hw/vendor\.qti\.hardware\.capabilityconfigstore\-service             u:object_r:vendor_hal_capabilityconfigstore_qti_default_exec:s0
+/vendor/bin/hw/vendor\.qti\.hardware\.display\.color\-service                     u:object_r:vendor_hal_display_color_default_exec:s0
+/vendor/bin/hw/vendor\.qti\.hardware\.perf2\-hal\-service                         u:object_r:vendor_hal_perf_default_exec:s0
+/vendor/bin/hw/vendor\.qti\.hardware\.trustedui\-aidl\-service\-qti                u:object_r:vendor_hal_trustedui_qti_exec:s0
+/vendor/bin/hw/vendor\.samsung\.hardware\.biometrics\.face\-service               u:object_r:hal_face_default_exec:s0
+/vendor/bin/hw/vendor\.samsung\.hardware\.biometrics\.fingerprint\-service        u:object_r:hal_fingerprint_default_exec:s0
+/vendor/bin/hw/vendor\.samsung\.hardware\.camera\.provider\-service_64            u:object_r:hal_camera_default_exec:s0
+/vendor/bin/hw/vendor\.samsung\.hardware\.health\-service                        u:object_r:hal_health_default_exec:s0
+/vendor/bin/hw/vendor\.samsung\.hardware\.thermal\-service                       u:object_r:hal_thermal_default_exec:s0
+/vendor/bin/hw/vendor\.samsung\.hardware\.vibrator\-service                      u:object_r:hal_vibrator_default_exec:s0
+/vendor/bin/hw/vendor\.samsung\.hardware\.wifi\-service                          u:object_r:hal_wifi_default_exec:s0
+
+# Samsung/QTI specific domains (defined in this directory)
+/vendor/bin/hw/macloader                                                     u:object_r:macloader_exec:s0
+/vendor/bin/hw/mfgloader                                                     u:object_r:mfgloader_exec:s0
+/vendor/bin/hw/vendor\.qti\.MemHal\-service                                     u:object_r:hal_memhal_qti_exec:s0
+/vendor/bin/hw/vendor\.qti\.hardware\.servicetrackeraidl\-service                u:object_r:hal_servicetracker_qti_exec:s0
+/vendor/bin/hw/vendor\.samsung\.hardware\.authfw\-service                        u:object_r:hal_samsung_authfw_default_exec:s0
+/vendor/bin/hw/vendor\.samsung\.hardware\.displayquality\-service                u:object_r:hal_samsung_displayquality_default_exec:s0
+/vendor/bin/hw/vendor\.samsung\.hardware\.hyper\-service                         u:object_r:hal_samsung_hyper_default_exec:s0
+/vendor/bin/hw/vendor\.samsung\.hardware\.khdm\-service                          u:object_r:hal_samsung_khdm_default_exec:s0
+/vendor/bin/hw/vendor\.samsung\.hardware\.media\.converter@1\.0\-service           u:object_r:hal_samsung_converter_default_exec:s0
+/vendor/bin/hw/vendor\.samsung\.hardware\.mpos\-service                          u:object_r:hal_samsung_mpos_default_exec:s0
+/vendor/bin/hw/vendor\.samsung\.hardware\.security\.drk\-service                  u:object_r:hal_samsung_drk_default_exec:s0
+/vendor/bin/hw/vendor\.samsung\.hardware\.security\.skpm\-service                 u:object_r:hal_samsung_skpm_default_exec:s0
+/vendor/bin/hw/vendor\.samsung\.hardware\.security\.widevine\.keyprov\-service     u:object_r:hal_samsung_widevine_keyprov_default_exec:s0
+/vendor/bin/hw/vendor\.samsung\.hardware\.security\.wsm\-service                  u:object_r:hal_samsung_wsm_default_exec:s0
+/vendor/bin/hw/vendor\.samsung\.hardware\.snap\-service                          u:object_r:hal_samsung_snap_default_exec:s0
+/vendor/bin/hw/vendor\.samsung\.hardware\.sysinput\-service                      u:object_r:hal_samsung_sysinput_default_exec:s0
+/vendor/bin/hw/vendor\.samsung\.hardware\.tlc\.blockchain\-service                u:object_r:hal_samsung_tlc_default_exec:s0
+/vendor/bin/hw/vendor\.samsung\.hardware\.tlc\.iccc\-service                      u:object_r:hal_samsung_tlc_default_exec:s0
+/vendor/bin/hw/vendor\.samsung\.hardware\.tlc\.kg\-service                        u:object_r:hal_samsung_tlc_default_exec:s0
+/vendor/bin/hw/vendor\.samsung\.hardware\.tlc\.payment\-service                   u:object_r:hal_samsung_tlc_default_exec:s0
+/vendor/bin/hw/vendor\.samsung\.hardware\.tlc\.ucm\-service                       u:object_r:hal_samsung_tlc_default_exec:s0

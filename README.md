@@ -92,9 +92,11 @@ unpack_bootimg --boot_img vendor_boot.img --out vendor_boot_out
 
 See `dt-audit.md` for the full list. The two big ones are:
 
-1. **SEPolicy for the Samsung HALs is incomplete.** The stock
-   `precompiled_sepolicy` is not shipped, so the vendor policy is built from
-   source; expect denials for `vendor.samsung.hardware.*` until rules are added.
+1. **17 Samsung/QTI HAL domains are `permissive`.** The stock vendor init
+   scripts carry no `seclabel`, so every HAL's domain comes from the exec label
+   of its binary. 19 binaries reuse existing AOSP/QTI domains; 17 Samsung-only
+   services got new domains that are permissive on purpose so they log instead
+   of blocking boot. Tighten them with `adb shell dmesg | grep avc`.
 2. **The stock `super` image is Samsung-signed.** Flashing a self-built `super`
    needs an unlocked bootloader and `fastbootd`/Odin — and the AVB footer is
    signed with the AOSP test key, not Samsung's.

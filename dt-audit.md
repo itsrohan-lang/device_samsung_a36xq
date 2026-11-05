@@ -75,7 +75,53 @@ no install collisions between device tree and 2311 blobs
 PRODUCT_PACKAGES: 55 unique, 8 not defined in-tree (NfcNci, Tag,
   com.android.nfc_extras, fastbootd, otapreopt_script, update_engine,
   update_engine_sideload, update_verifier - all AOSP/Lineage)
+sepolicy: 22 .te files, 17 domains, 39 context types,
+  0 unresolved, 0 duplicate domain(s)
 ```
+
+---
+
+## Round 2: HAL bring-up (sepolicy + audio)
+
+The stock vendor init scripts carry **no `seclabel`** for the HAL services, so
+every HAL's domain is derived from the SELinux label of its binary through
+`init_daemon_domain()`. Checking all 59 prebuilt HAL binaries against AOSP and
+QTI policy showed 19 were already labelled and **40 had no domain at all** -
+those services could not start. That is the "no radio, no camera, bootloop at
+init" failure mode.
+
+* **19 binaries are mapped onto existing AOSP/QTI domains** whose interface they
+  implement: health, power, lights, thermal, vibrator, camera, fingerprint,
+  face, wifi, bluetooth, audio, dumpstate, weaver, mediacodec, display colour,
+  capability config store, trusted UI and perf. They inherit a real, tight
+  policy instead of a new empty one.
+* **17 new domains** were defined for Samsung/QTI-only services: the five TLC
+  trusted apps, DRK, SKPM, WSM, Widevine key provisioning, auth framework,
+  HyPer, KHDM, mPOS, SNAP, sysinput, colour converter, display quality, MemHal,
+  service tracker, `macloader` and `mfgloader`.
+* Those 17 are **`permissive` during bring-up**: denials are logged instead of
+  blocking boot. They must be tightened on a real device.
+* `sepolicy/vendor/file_contexts` labels all 40 binaries.
+* **Audio**: the tree now ships `configs/audio/audio_policy_configuration.xml`,
+  a copy of the stock `audio_policy_configuration_base.xml`, because audioserver
+  looks for the plain filename. The missing primary module is by design - the
+  AIDL audio HAL hosts it (`vendor/etc/audio/audio_module_config_primary.xml`,
+  stated in a comment in that very file). The stock `sku_*` variants are
+  unusable on this device: they `xi:include` a
+  `stub_audio_policy_configuration.xml` that does not exist anywhere in the
+  firmware.
+
+`tools/validate_dt.py` gained a sepolicy cross-check. Point `DSH_SEPOLICY_REFS`
+at a directory containing `ref_sepolicy` (LineageOS, `lineage-23.0`) and
+`ref_qcom_sepolicy` (`lineage-23.0-caf-sm8450`) to enable it:
+
+```
+sepolicy: 22 .te files, 17 domains, 39 context types,
+          0 unresolved, 0 duplicate domain(s)
+```
+
+Without those checkouts the validator still checks internal consistency and
+reports that the upstream cross-check was skipped.
 
 ---
 
@@ -83,17 +129,17 @@ PRODUCT_PACKAGES: 55 unique, 8 not defined in-tree (NfcNci, Tag,
 
 These are real gaps, not oversights - they need a device in hand.
 
-1. **SEPolicy for the Samsung HALs.** The stock `odm/etc/selinux/precompiled_sepolicy`
-   is deliberately not shipped, so vendor policy is built from source. Expect
-   denials for `vendor.samsung.hardware.*`, Samsung radio, `secaudiohalaidl`,
-   `vendor.samsung.hardware.displayquality`, TLC services, `mpos`, `snap`, etc.
-   Iterate with `adb shell dmesg | grep avc`.
-2. **Audio policy configuration.** The stock vendor ships
-   `vendor/etc/audio_policy_configuration_base.xml` and
-   `vendor/etc/audio/sku_parrot_qssi/audio_policy_configuration.xml`, but
-   audioserver looks for `vendor/etc/audio_policy_configuration.xml`. If audio
-   comes up silent, that file (probably a small wrapper `xi:include`) is the
-   first thing to add.
+1. **Tighten the bring-up policy.** The 17 new domains are `permissive`. Once the
+   device boots, collect `adb shell dmesg | grep avc`, turn each denial into an
+   `allow` rule and drop the `permissive` line. Also verify the 19 reused
+   domains do not need Samsung-specific additions (battery/EFS/touch sysfs
+   nodes are the common ones - `sepolicy/vendor/hal_*_default.te`).
+2. **Paths the reused domains may still need.** `hal_power_default` on this
+   device will want the Samsung touchscreen sysfs nodes
+   (`sysfs_sec_touch`, already declared in `file.te`/`genfs_contexts`) and the
+   Samsung battery nodes for `hal_health_default`. Expect to add a handful of
+   `allow` lines there.
+
 3. **Samsung framework HALs vs Lineage ones.** Power, lights, health, vibrator,
    fingerprint are all prebuilt Samsung services with their own `.rc` and
    `seclabel`. They must be trusted by the Lineage sepolicy; do not also build

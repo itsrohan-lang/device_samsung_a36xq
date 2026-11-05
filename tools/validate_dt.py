@@ -337,6 +337,105 @@ def check_modules():
         info(f"  external package: {u}")
 
 
+# --------------------------------------------------------------- sepolicy
+TYPE_RE = re.compile(r"^\s*type\s+([A-Za-z0-9_]+)\s*,\s*([^;]*);", re.M)
+
+
+def sepolicy_refs():
+    """Optional AOSP + QCOM sepolicy checkouts, used to verify type references.
+
+    Set DSH_SEPOLICY_REFS to a directory containing `ref_sepolicy` and
+    `ref_qcom_sepolicy` (LINEAGE-23.0 / lineage-23.0-caf-sm8450) to enable the
+    cross-check. Without it only internal consistency is checked.
+    """
+    cands = []
+    env = os.environ.get("DSH_SEPOLICY_REFS")
+    if env:
+        cands.append(env)
+    for up in range(1, 5):
+        cands.append(os.path.join(DT, *([".."] * up)))
+    for c in cands:
+        a = os.path.join(c, "ref_sepolicy")
+        q = os.path.join(c, "ref_qcom_sepolicy")
+        if os.path.isdir(a) and os.path.isdir(q):
+            return a, q
+    return None, None
+
+
+def collect_types(root):
+    names = set()
+    for dirpath, _d, files in os.walk(root):
+        for f in files:
+            if not f.endswith(".te"):
+                continue
+            try:
+                text = read(os.path.join(dirpath, f))
+            except OSError:
+                continue
+            text = re.sub(r"#[^\n]*", "", text)
+            for m in TYPE_RE.finditer(text):
+                names.add(m.group(1))
+    return names
+
+
+def check_sepolicy():
+    pol = os.path.join(DT, "sepolicy", "vendor")
+    if not os.path.isdir(pol):
+        return
+
+    own_types, own_domains = set(), set()
+    te_files = [f for f in os.listdir(pol) if f.endswith(".te")]
+    for f in te_files:
+        path = os.path.join(pol, f)
+        text = re.sub(r"#[^\n]*", "", read(path))
+        decl = TYPE_RE.findall(text)
+        for name, attrs in decl:
+            own_types.add(name)
+            if "domain" in {a.strip() for a in attrs.split(",")}:
+                own_domains.add(name)
+        stem = f[:-3]
+        declared = {name for name, _attrs in decl}
+        # A file that declares `<stem>_exec` is defining a new domain and must
+        # also declare the domain itself. Files that only add rules to an
+        # existing (upstream) domain are legitimate and skipped here.
+        if stem + "_exec" in declared and stem not in own_domains:
+            err(f"sepolicy/vendor/{f}: declares {stem}_exec but not `type {stem}, domain;`")
+
+    # types referenced from file_contexts / genfs_contexts
+    referenced = set()
+    for ctx_file in ("file_contexts", "genfs_contexts"):
+        p = os.path.join(pol, ctx_file)
+        if not os.path.exists(p):
+            continue
+        for line in read(p).splitlines():
+            line = line.strip()
+            if not line or line.startswith("#"):
+                continue
+            m = re.search(r"u:object_r:([A-Za-z0-9_]+):s0", line)
+            if m:
+                referenced.add(m.group(1))
+
+    aosp, qcom = sepolicy_refs()
+    if aosp is None:
+        info(f"sepolicy: {len(te_files)} .te files, {len(own_domains)} domains, "
+             f"{len(referenced)} context types; upstream cross-check skipped "
+             f"(set DSH_SEPOLICY_REFS to enable)")
+        return
+
+    upstream = collect_types(aosp) | collect_types(qcom)
+    unknown = sorted(t for t in referenced if t not in own_types and t not in upstream)
+    for t in unknown:
+        err(f"sepolicy: type {t} is referenced but defined in neither this tree nor AOSP/QCOM policy")
+
+    dupes = sorted(own_domains & upstream)
+    for d in dupes:
+        err(f"sepolicy: domain {d} is already defined upstream (duplicate declaration)")
+
+    info(f"sepolicy: {len(te_files)} .te files, {len(own_domains)} domains, "
+         f"{len(referenced)} context types, {len(unknown)} unresolved, "
+         f"{len(dupes)} duplicate domain(s)")
+
+
 # --------------------------------------------------------------- xml
 def check_xml():
     for root, _dirs, files in os.walk(os.path.join(DT, "configs")):
@@ -361,6 +460,7 @@ def main():
     check_blobs(positive, negative)
     check_collisions(positive)
     check_modules()
+    check_sepolicy()
     check_xml()
 
     print("=" * 70)
