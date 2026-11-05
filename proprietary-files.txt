@@ -2443,3 +2443,6 @@ vendor/etc/permissions/samsung.software.secure_key_service.xml
 vendor/etc/permissions/vendor.samsung.hardware.telephony.cdma_excluded.xml
 vendor/etc/permissions/vendor.samsung.hardware.telephony.gsm.xml
 vendor/etc/permissions/vendor.samsung.hardware.telephony.satellite.xml
+
+# Samsung system protobuf, needed by vendor.qti.hardware.qccsyshal@1.2-halimpl
+system/lib64/libprotobuf-cpp-full-6.33.5.so
