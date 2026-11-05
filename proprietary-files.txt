@@ -854,7 +854,7 @@ vendor/etc/init/vendor.qti.media.c2@1.0-service.rc
 vendor/etc/init/vendor.qti.media.c2audio@1.0-service.rc
 vendor/lib64/libOmxCore.so
 vendor/lib64/libcodec2_aidl.so
-vendor/lib64/libcodec2_hal_common.so
+-vendor/lib64/libcodec2_hal_common.so
 vendor/lib64/libcodec2_hidl_plugin.so
 vendor/lib64/libplatformconfig.so
 vendor/lib64/libstagefright_aidl_bufferpool2.so
