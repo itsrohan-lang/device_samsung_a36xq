@@ -1388,7 +1388,7 @@ vendor/bin/agmhostless
 vendor/bin/agmplay
 vendor/bin/agmvoiceui
 vendor/bin/applypatch
-vendor/bin/ar_util_in_test_example
+-vendor/bin/ar_util_in_test_example
 vendor/bin/athdiag
 -vendor/bin/audioadsprpcd
 vendor/bin/audioflacapp
