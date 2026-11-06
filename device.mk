@@ -126,7 +126,8 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     vendor/samsung/a36xq \
     vendor/samsung/camera \
-    hardware/qcom-caf/sm8450-6.6
+    hardware/qcom-caf/sm8450-6.6 \
+    hardware/qcom-caf/wlan
 
 # Permissions
 #
