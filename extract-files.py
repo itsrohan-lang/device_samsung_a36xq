@@ -18,6 +18,7 @@ namespace_imports = [
     'device/samsung/a36xq',
     'hardware/qcom-caf/sm8450-6.6',
     'hardware/qcom-caf/wlan',
+    'hardware/qcom-caf/wlan/qcwcn',
     'vendor/qcom/opensource/dataservices',
 ]
 
