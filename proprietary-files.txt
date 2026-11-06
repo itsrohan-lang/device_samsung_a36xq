@@ -1711,7 +1711,6 @@ vendor/etc/ssg/tz_whitelist.json
 vendor/etc/str/str_preference_data.dat
 vendor/etc/sysconfig/cacert-oem-defined-uids.xml
 vendor/etc/sysconfig/vendor-apex-allowlist.xml
-vendor/etc/vintf/manifest/audioeffectservice_qti.xml
 vendor/etc/vintf/manifest/bluetooth_hci.xml
 -vendor/etc/vintf/manifest/boot-service.qti.xml
 vendor/etc/vintf/manifest/c2_manifest_vendor_audio.xml
