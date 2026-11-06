@@ -399,7 +399,7 @@ vendor/lib64/libscveObjectTracker.so
 vendor/lib64/libscveObjectTracker_stub.so
 vendor/lib64/libsecril-client.so
 vendor/lib64/libsensorlistener.so
-vendor/lib64/libsensorndkbridge.so
+-vendor/lib64/libsensorndkbridge.so
 vendor/lib64/libsensorslog.so
 vendor/lib64/libsnsapi.so
 vendor/lib64/libsynx.so
@@ -1308,9 +1308,9 @@ vendor/lib64/libspukeymintdeviceutils.so
 # Wi-Fi
 system_ext/lib64/vendor.qti.hardware.wigig.netperftuner@1.0.so|MODULE_SUFFIX=.system_ext
 system_ext/lib64/vendor.qti.hardware.wigig.supptunnel@1.0.so
-vendor/bin/hw/android.hardware.wifi-service
+-vendor/bin/hw/android.hardware.wifi-service
 vendor/bin/hw/hostapd
-vendor/bin/hw/wpa_supplicant
+-vendor/bin/hw/wpa_supplicant
 vendor/bin/cnss-daemon
 vendor/bin/hostapd_cli
 vendor/bin/wpa_cli
