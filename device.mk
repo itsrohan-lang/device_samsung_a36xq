@@ -129,6 +129,7 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/qcom-caf/sm8450-6.6 \
     hardware/qcom-caf/wlan \
     hardware/qcom-caf/wlan/qcwcn \
+    hardware/qcom-caf/common/libqti-perfd-client \
     vendor/qcom/opensource/dataservices
 
 # Permissions
