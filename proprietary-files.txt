@@ -774,6 +774,7 @@ vendor/bin/xtra-daemon
 vendor/etc/init/android.hardware.gnss-aidl-service-qti.rc
 vendor/etc/vintf/manifest/android.hardware.gnss-aidl-service-qti.xml
 vendor/etc/vintf/manifest/vendor.qti.gnss-service.xml
+vendor/lib64/hw/android.hardware.gnss-aidl-impl-qti.so
 vendor/lib64/hw/vendor.samsung.hardware.gnss-aidl-impl-sec.so
 vendor/lib64/libdataitems.so
 vendor/lib64/libgps.utils.so
