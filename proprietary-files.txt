@@ -1724,7 +1724,7 @@ vendor/etc/vintf/manifest/iweaver_aidl_v2_manifest.xml
 vendor/etc/vintf/manifest/khdm-default-sec.xml
 vendor/etc/vintf/manifest/lights-sec.xml
 vendor/etc/vintf/manifest/manifest_audio_qti_services.xml
-vendor/etc/vintf/manifest/manifest_audiocorehal_default.xml
+-vendor/etc/vintf/manifest/manifest_audiocorehal_default.xml
 vendor/etc/vintf/manifest/manifest_btaudiocoreservices_qti.xml
 vendor/etc/vintf/manifest/mapper.qti.xml
 vendor/etc/vintf/manifest/memtrack_qti.xml
