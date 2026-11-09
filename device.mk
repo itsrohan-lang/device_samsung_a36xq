@@ -153,6 +153,13 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.ims.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.ims.xml \
     frameworks/native/data/etc/android.hardware.telephony.ims.singlereg.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.ims.singlereg.xml
 
+
+# Bluetooth audio HAL, built from hardware/interfaces so its AIDL version
+# matches libbluetooth_audio_session_aidl in this ROM.
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth.audio-impl
+
+
 # Wi-Fi
 #
 # These are built from source (external/wpa_supplicant_8,

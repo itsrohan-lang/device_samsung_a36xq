@@ -1118,7 +1118,7 @@ vendor/lib64/hw/android.hardware.renderscript@1.0-impl.so
 vendor/lib64/vendor.qti.esepowermanager@1.0.so
 
 # Security
-vendor/bin/hw/android.hardware.security.keymint-service
+vendor/bin/hw/android.hardware.security.keymint-service|MODULE_SUFFIX=.samsung
 vendor/etc/init/android.hardware.security.keymint-service.rc
 vendor/etc/vintf/manifest/android.hardware.security.keymint-service_V3.xml
 vendor/etc/vintf/manifest/android.hardware.security.secureclock-service.xml
