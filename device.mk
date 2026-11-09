@@ -119,7 +119,8 @@ PRODUCT_PACKAGES += \
 # also why the sku_* variants (broken include of a stub that does not exist on
 # the device) are not used here.
 PRODUCT_PACKAGES += \
-    libaudioplatformconverter.qti
+    libaudioplatformconverter.qti \
+    libdownmixaidl
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml
