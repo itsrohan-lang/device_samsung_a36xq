@@ -149,6 +149,30 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.ims.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.ims.xml \
     frameworks/native/data/etc/android.hardware.telephony.ims.singlereg.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.ims.singlereg.xml
 
+# Wi-Fi
+#
+# These are built from source (external/wpa_supplicant_8,
+# hardware/interfaces/wifi/aidl/default) so they match the AIDL versions this
+# ROM ships. The stock Samsung binaries declare older AIDL revisions and cannot
+# be mixed into the same build graph.
+PRODUCT_PACKAGES += \
+    android.hardware.wifi-service \
+    hostapd \
+    hostapd_cli \
+    wpa_cli \
+    wpa_supplicant
+
+# DRM
+PRODUCT_PACKAGES += \
+    android.hardware.drm-service.clearkey
+
+# Sensors
+#
+# libsensorndkbridge is provided by frameworks/hardware/interfaces; building it
+# from source keeps the sensors AIDL version consistent with the rest of the ROM.
+PRODUCT_PACKAGES += \
+    libsensorndkbridge
+
 # NFC
 PRODUCT_PACKAGES += \
     NfcNci \

@@ -715,8 +715,8 @@ vendor/lib64/vendor.qti.hardware.dpmaidlservice-V1-ndk.so
 # DRM
 vendor/apex/com.google.android.widevine.nonupdatable.apex
 -vendor/bin/hw/android.hardware.drm-service.clearkey
-vendor/etc/init/android.hardware.drm-service.clearkey.rc
-vendor/etc/vintf/manifest/android.hardware.drm-service.clearkey.xml
+-vendor/etc/init/android.hardware.drm-service.clearkey.rc
+-vendor/etc/vintf/manifest/android.hardware.drm-service.clearkey.xml
 vendor/lib64/mediacas/libclearkeycasplugin.so
 vendor/lib64/mediadrm/libdrmclearkeyplugin.so
 vendor/lib64/libcpion.so
@@ -1309,13 +1309,13 @@ vendor/lib64/libspukeymintdeviceutils.so
 system_ext/lib64/vendor.qti.hardware.wigig.netperftuner@1.0.so|MODULE_SUFFIX=.system_ext
 system_ext/lib64/vendor.qti.hardware.wigig.supptunnel@1.0.so
 -vendor/bin/hw/android.hardware.wifi-service
-vendor/bin/hw/hostapd
+-vendor/bin/hw/hostapd
 -vendor/bin/hw/wpa_supplicant
 vendor/bin/cnss-daemon
 vendor/bin/hostapd_cli
 vendor/bin/wpa_cli
-vendor/etc/init/android.hardware.wifi-service.rc
-vendor/etc/init/android.hardware.wifi.supplicant-service.rc
+-vendor/etc/init/android.hardware.wifi-service.rc
+-vendor/etc/init/android.hardware.wifi.supplicant-service.rc
 vendor/etc/vintf/manifest/android.hardware.wifi-service.xml
 vendor/etc/vintf/manifest/android.hardware.wifi.hostapd.xml
 vendor/etc/vintf/manifest/android.hardware.wifi.supplicant.xml
@@ -1526,7 +1526,7 @@ vendor/etc/init/emservice.rc
 vendor/etc/init/face-default-sec.rc
 vendor/etc/init/fingerprint_common.rc
 vendor/etc/init/hermesd.rc
-vendor/etc/init/hostapd.android.rc
+-vendor/etc/init/hostapd.android.rc
 vendor/etc/init/hyper-default-sec.rc
 vendor/etc/init/ims-dataservice-daemon.rc
 vendor/etc/init/imsdaemon.rc
