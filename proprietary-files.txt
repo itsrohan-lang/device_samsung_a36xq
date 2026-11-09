@@ -1131,11 +1131,11 @@ vendor/lib64/libskeymint_cli.so
 vendor/lib64/vendor.samsung.hardware.keymint-V3-ndk.so
 
 # Sensors
-vendor/bin/hw/android.hardware.sensors-service.multihal
+-vendor/bin/hw/android.hardware.sensors-service.multihal
 vendor/bin/sensors.qti
 vendor/bin/sscrpcd
-vendor/etc/init/android.hardware.sensors-service-multihal.rc
-vendor/etc/vintf/manifest/android.hardware.sensors-multihal.xml
+-vendor/etc/init/android.hardware.sensors-service-multihal.rc
+-vendor/etc/vintf/manifest/android.hardware.sensors-multihal.xml
 vendor/lib64/hw/mapper.qti.so
 vendor/lib64/hw/sensors.dynamic_sensor_hal.so
 vendor/lib64/libhidparser.so
@@ -1926,7 +1926,7 @@ vendor/firmware/vpu20_4v_unsigned.mbn
 vendor/firmware/wigig.ini
 vendor/lib64/hw/libaudiocorehal.default.so
 vendor/lib64/hw/libaudiocorehal.qti.so
-vendor/lib64/hw/libaudioeffecthal.qti.so
+-vendor/lib64/hw/libaudioeffecthal.qti.so
 vendor/lib64/hw/libsecaudiohal_aidl.so
 -vendor/lib64/hw/libsoundtriggerhal.qti.so
 vendor/lib64/aidl_libtlc_comm_iccc.so
@@ -2003,7 +2003,7 @@ vendor/lib64/libaivideocentral.arcsoft.so
 -vendor/lib64/libats.so
 vendor/lib64/libaudio_log_utils.so
 -vendor/lib64/libaudiochargerlistener.so
-vendor/lib64/libaudioplatformconverter.qti.so
+-vendor/lib64/libaudioplatformconverter.qti.so
 vendor/lib64/libaudioserviceexampleimpl.so
 vendor/lib64/libauto_framing_arcsoft.uniplugin@1.0.so
 vendor/lib64/libauto_framing_lite.uniplugin@1.0.so

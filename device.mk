@@ -118,6 +118,9 @@ PRODUCT_PACKAGES += \
 # audio HAL itself (vendor/etc/audio/audio_module_config_primary.xml), which is
 # also why the sku_* variants (broken include of a stub that does not exist on
 # the device) are not used here.
+PRODUCT_PACKAGES += \
+    libaudioplatformconverter.qti
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml
 
@@ -171,7 +174,9 @@ PRODUCT_PACKAGES += \
 # libsensorndkbridge is provided by frameworks/hardware/interfaces; building it
 # from source keeps the sensors AIDL version consistent with the rest of the ROM.
 PRODUCT_PACKAGES += \
+    android.hardware.sensors-service.multihal \
     libsensorndkbridge
+    
 
 # NFC
 PRODUCT_PACKAGES += \
