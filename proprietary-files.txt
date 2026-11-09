@@ -1,4 +1,4 @@
-# Unpinned blobs from a36xqnsxx-user 17 CP2A.260605.016 A366EXXUCDZIF release-keys
+﻿# Unpinned blobs from a36xqnsxx-user 17 CP2A.260605.016 A366EXXUCDZIF release-keys
 
 # ADSP
 vendor/bin/adsprpcd
@@ -1924,8 +1924,8 @@ vendor/firmware/vpu20_1v_unsigned.mbn
 vendor/firmware/vpu20_4v.mbn
 vendor/firmware/vpu20_4v_unsigned.mbn
 vendor/firmware/wigig.ini
-vendor/lib64/hw/libaudiocorehal.default.so
-vendor/lib64/hw/libaudiocorehal.qti.so
+-vendor/lib64/hw/libaudiocorehal.default.so
+-vendor/lib64/hw/libaudiocorehal.qti.so
 -vendor/lib64/hw/libaudioeffecthal.qti.so
 vendor/lib64/hw/libsecaudiohal_aidl.so
 -vendor/lib64/hw/libsoundtriggerhal.qti.so
@@ -2004,7 +2004,7 @@ vendor/lib64/libaivideocentral.arcsoft.so
 vendor/lib64/libaudio_log_utils.so
 -vendor/lib64/libaudiochargerlistener.so
 -vendor/lib64/libaudioplatformconverter.qti.so
-vendor/lib64/libaudioserviceexampleimpl.so
+-vendor/lib64/libaudioserviceexampleimpl.so
 vendor/lib64/libauto_framing_arcsoft.uniplugin@1.0.so
 vendor/lib64/libauto_framing_lite.uniplugin@1.0.so
 vendor/lib64/libautotracking_interface.so
