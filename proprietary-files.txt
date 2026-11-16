@@ -1400,7 +1400,6 @@ vendor/bin/athdiag
 vendor/bin/audioflacapp
 vendor/bin/btcoex_cont_config
 vendor/bin/cass
-vendor/bin/checkpoint_gc
 vendor/bin/chimcxtest
 vendor/bin/chiofflinepostproctest
 vendor/bin/cnss_diag
