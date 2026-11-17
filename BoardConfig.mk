@@ -74,6 +74,19 @@ BOARD_USES_GENERIC_KERNEL_IMAGE := true
 TARGET_NO_KERNEL_OVERRIDE := true
 PRODUCT_COPY_FILES += $(DEVICE_PATH)/prebuilts/kernel:kernel
 
+# Kernel UAPI headers
+#
+# Nothing builds a kernel from this tree - the boot image ships the prebuilt
+# image above. TARGET_KERNEL_SOURCE is only read by Lineage's
+# generated_kernel_includes generator, which runs `make headers_install` there
+# and exports the result as usr/include{,/audio} to every module that declares
+# header_libs: ["audio_kernel_headers", "qti_kernel_headers", ...] (for example
+# hardware/qcom-caf/*/audio/graphservices/ar_osal). It has to point at a real
+# kernel tree with a Makefile and include/uapi; the default
+# $(TARGET_AUTO_KDIR) is our wrapper repo root, which has neither, so the
+# generator would export nothing.
+TARGET_KERNEL_SOURCE := kernel/samsung/a36xq/kernel_platform/msm-kernel
+
 BOARD_BOOT_HEADER_VERSION := 4
 BOARD_INIT_BOOT_HEADER_VERSION := 4
 BOARD_KERNEL_BASE := 0x00000000
