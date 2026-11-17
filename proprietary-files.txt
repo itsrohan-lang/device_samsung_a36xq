@@ -1123,8 +1123,8 @@ vendor/lib64/vendor.qti.esepowermanager@1.0.so
 -vendor/bin/hw/android.hardware.security.keymint-service
 vendor/etc/init/android.hardware.security.keymint-service.rc
 vendor/etc/vintf/manifest/android.hardware.security.keymint-service_V3.xml
-vendor/etc/vintf/manifest/android.hardware.security.secureclock-service.xml
-vendor/etc/vintf/manifest/android.hardware.security.sharedsecret-service.xml
+-vendor/etc/vintf/manifest/android.hardware.security.secureclock-service.xml
+-vendor/etc/vintf/manifest/android.hardware.security.sharedsecret-service.xml
 -vendor/lib64/libcppbor.so
 -vendor/lib64/libcppbor_external.so
 -vendor/lib64/libkeymaster4_1support.so
@@ -2313,7 +2313,7 @@ vendor/lib64/libvkservice.so
 -vendor/lib64/libvndfwk_detect_jni.qti_vendor.so
 vendor/lib64/libwpa_drv_oem.so
 vendor/lib64/libwsmd_functions.so
-vendor/lib64/libz_stable.so
+-vendor/lib64/libz_stable.so
 vendor/lib64/libzoomroi.samsung.so
 vendor/lib64/libzoomroi_lite.samsung.so
 -vendor/lib64/qti-audio-types-aidl-V1-ndk.so
