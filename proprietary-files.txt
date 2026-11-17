@@ -1803,7 +1803,7 @@ vendor/etc/ftm_test_config_ravelin-qrd-snd-card
 vendor/etc/gnss_antenna_info.conf
 vendor/etc/gpfspath_oem_config.xml
 vendor/etc/hqm_device.xml
-vendor/etc/linker.config.pb
+-vendor/etc/linker.config.pb
 vendor/etc/mercury.json
 vendor/etc/mercury_hv.json
 vendor/etc/microphone_characteristics.xml
