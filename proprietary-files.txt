@@ -850,7 +850,7 @@ system/lib64/libmedia_codeclist_capabilities.so
 -system/lib64/libstagefright_bufferpool@2.0.1.so
 system/lib64/libstagefright_codecbase.so
 system/lib64/libstagefright_framecapture_utils.so
-system/lib64/libstagefright_graphicbuffersource_aidl.so
+-system/lib64/libstagefright_graphicbuffersource_aidl.so
 system/lib64/libstagefright_hdcp.so
 system/lib64/libstagefright_httplive_sec.so
 system/lib64/libstagefright_surface_utils.so
