@@ -87,6 +87,14 @@ PRODUCT_COPY_FILES += $(DEVICE_PATH)/prebuilts/kernel:kernel
 # generator would export nothing.
 TARGET_KERNEL_SOURCE := kernel/samsung/a36xq/kernel_platform/msm-kernel
 
+# The kernel repo carries kernel_samsung_a36xq/.find-ignore, so the generator's
+# dep_files globs over that tree come back empty and none of its headers are
+# real inputs of the generated_kernel_includes action. Bump this whenever the
+# exported UAPI header set changes without the generator's command changing,
+# otherwise ninja/siso treats the action as up to date and keeps the old
+# usr/include tree in place.
+TARGET_KERNEL_ADDITIONAL_FLAGS += A36XQ_KERNEL_UAPI_REV=2
+
 BOARD_BOOT_HEADER_VERSION := 4
 BOARD_INIT_BOOT_HEADER_VERSION := 4
 BOARD_KERNEL_BASE := 0x00000000
