@@ -46,11 +46,24 @@ TARGET_CPU_ABI2 :=
 TARGET_CPU_VARIANT := generic
 TARGET_CPU_VARIANT_RUNTIME := kryo300
 
-TARGET_2ND_ARCH := arm
-TARGET_2ND_ARCH_VARIANT := armv8-a
-TARGET_2ND_CPU_ABI := armeabi-v7a
-TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := generic
+# 64-bit only. The stock firmware says so unambiguously:
+#   dump/vendor/build.prop: ro.zygote=zygote64
+#                           ro.vendor.product.cpu.abilist32=      (empty)
+#                           ro.vendor.product.cpu.abilist64=arm64-v8a
+# and it ships no 32-bit ARM userspace at all - the only file under vendor/lib/
+# is rfsa/adsp/libdsp_streamer_binning.so, which is a Hexagon DSP object
+# (ELF32, e_machine 164 = EM_HEXAGON), not 32-bit ARM code.
+#
+# A TARGET_2ND_ARCH here made the build emit arm variants of every
+# "compile_multilib: both" module, which nothing on this device can load and
+# which trip ILP32-only bugs in the QCOM HALs (LP64 code assumes %lu is 64-bit):
+#
+#   gr_snap_helper.cpp:1818:15: error: format specifies type 'unsigned long'
+#   but the argument has type 'uint64_t' (aka 'unsigned long long')
+#
+# Leaving TARGET_2ND_ARCH unset removes those variants entirely.
+TARGET_SUPPORTS_32_BIT_APPS := false
+TARGET_SUPPORTS_64_BIT_APPS := true
 
 # Platform
 BOARD_VENDOR := samsung
