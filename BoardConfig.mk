@@ -93,7 +93,7 @@ TARGET_KERNEL_SOURCE := kernel/samsung/a36xq/kernel_platform/msm-kernel
 # exported UAPI header set changes without the generator's command changing,
 # otherwise ninja/siso treats the action as up to date and keeps the old
 # usr/include tree in place.
-TARGET_KERNEL_ADDITIONAL_FLAGS += A36XQ_KERNEL_UAPI_REV=2
+TARGET_KERNEL_ADDITIONAL_FLAGS += A36XQ_KERNEL_UAPI_REV=3
 
 BOARD_BOOT_HEADER_VERSION := 4
 BOARD_INIT_BOOT_HEADER_VERSION := 4
