@@ -1776,7 +1776,7 @@ vendor/etc/HapticsPolicy.xml
 vendor/etc/IPACM_Filter_cfg.xml
 vendor/etc/SVI_calib_A36_S6E3FC5_AMS663FS01.xml
 vendor/etc/SoundBoosterParam.txt
-vendor/etc/aconfig_flags.pb
+-vendor/etc/aconfig_flags.pb
 vendor/etc/agingconfig.txt
 vendor/etc/boringssl_self_test.no_zygote.rc
 vendor/etc/boringssl_self_test.zygote32.rc
