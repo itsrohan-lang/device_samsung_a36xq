@@ -73,18 +73,32 @@ TARGET_USES_VULKAN := true
 #   gr_utils.cpp:2213:43: error: no member named 'reserved_size' in
 #   'qtigralloc::private_handle_t'
 #
-# TARGET_BOARD_PLATFORM is "parrot" and this tree never applies the defaults
-# hardware/qcom-caf/common/BoardConfigQcom.mk derives from it, so the selects
-# fall back to their default (off). Set the TARGET_ variables and the Soong
-# config values caf_common would have produced, so either include order works.
+# Setting SOONG_CONFIG_qtidisplay_<key> is not enough on its own: build/make
+# only serialises the keys that are also listed in SOONG_CONFIG_qtidisplay
+# (see the VendorVars loop in build/make/core/soong_config.mk), everything else
+# is dropped before Soong ever sees it. Since this tree does not inherit
+# hardware/qcom-caf/common/BoardConfigQcom.mk - the file that normally declares
+# the namespace and derives these values from TARGET_BOARD_PLATFORM - declare
+# them here. SOONG_CONFIG_NAMESPACES and SOONG_CONFIG_<ns> are sorted, so a
+# duplicate entry from a future caf_common include is harmless.
 #
-# ubwcp_format stays off: none of the gralloc blobs we still ship (mapper.qti.so,
-# libmapperutils.so, libgralloccore.so) reference ubwcp or link libubwcp, so the
-# stock handle has no such field - adding it would change the ABI those blobs
-# were built against.
+# TARGET_BOARD_PLATFORM is "parrot", which caf_common treats as UM 5.10: the two
+# reserved fields are on and ubwcp_format is off.
+#
+# ubwcp_format stays off on purpose: none of the gralloc blobs we still ship
+# (mapper.qti.so, libmapperutils.so, libgralloccore.so) reference ubwcp or link
+# libubwcp, so the stock handle has no such field - adding it would change the
+# ABI those blobs were built against.
 TARGET_GRALLOC_HANDLE_HAS_RESERVED_SIZE := true
 TARGET_GRALLOC_HANDLE_HAS_CUSTOM_CONTENT_MD_RESERVED_SIZE := true
 TARGET_GRALLOC_HANDLE_HAS_UBWCP_FORMAT := false
+
+SOONG_CONFIG_NAMESPACES += qtidisplay
+SOONG_CONFIG_qtidisplay += \
+    gralloc_handle_has_reserved_size \
+    gralloc_handle_has_custom_content_md_reserved_size \
+    gralloc_handle_has_ubwcp_format
+
 SOONG_CONFIG_qtidisplay_gralloc_handle_has_reserved_size := true
 SOONG_CONFIG_qtidisplay_gralloc_handle_has_custom_content_md_reserved_size := true
 SOONG_CONFIG_qtidisplay_gralloc_handle_has_ubwcp_format := false
