@@ -2341,7 +2341,7 @@ vendor/lib64/vendor.qti.hardware.data.qmiaidlservice-V1-ndk.so
 -vendor/lib64/vendor.qti.hardware.display.composer3-V3-ndk.so
 vendor/lib64/vendor.qti.hardware.display.snapalloc-impl.so
 vendor/lib64/vendor.qti.hardware.mwqemadapteraidlservice-V1-ndk.so
-vendor/lib64/vendor.qti.hardware.pal-V1-ndk.so
+-vendor/lib64/vendor.qti.hardware.pal-V1-ndk.so
 -vendor/lib64/vendor.qti.hardware.qspa-V1-ndk.so
 -vendor/lib64/vendor.qti.hardware.systemhelper@1.0.so
 -vendor/lib64/vendor.qti.hardware.systemhelperaidl-V1-ndk.so
