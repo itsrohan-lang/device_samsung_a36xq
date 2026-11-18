@@ -192,6 +192,10 @@ PRODUCT_PACKAGES += \
     Tag \
     com.android.nfc_extras
 
+# com.qti.chi.override.so links the older allocator AIDL version at runtime
+PRODUCT_PACKAGES += \
+		    android.hardware.graphics.allocator-V1-ndk
+
 # Samsung Camera (vendor/samsung/camera)
 $(call inherit-product-if-exists, vendor/samsung/camera/camera.mk)
 
