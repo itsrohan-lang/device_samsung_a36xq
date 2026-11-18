@@ -56,7 +56,7 @@ vendor/lib64/soundfx/libmyspace_aidl.so
 -vendor/lib64/soundfx/libreverbaidl.so
 vendor/lib64/soundfx/libsamsungSoundbooster_plus.so
 vendor/lib64/soundfx/libswdap.so
-vendor/lib64/soundfx/libswdapaidl.so
+-vendor/lib64/soundfx/libswdapaidl.so
 -vendor/lib64/soundfx/libswspatializer.so
 -vendor/lib64/soundfx/libswspatializeraidl.so
 -vendor/lib64/soundfx/libvisualizeraidl.so
