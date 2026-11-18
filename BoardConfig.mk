@@ -64,6 +64,31 @@ TARGET_USES_UEFI := true
 TARGET_SCREEN_DENSITY := 450
 TARGET_USES_VULKAN := true
 
+# Gralloc handle layout
+#
+# private_handle_t only carries reserved_size / custom_content_md_reserved_size
+# when the matching qtidisplay Soong config variable is true, and the qcom-caf
+# display sources use both fields unconditionally:
+#
+#   gr_utils.cpp:2213:43: error: no member named 'reserved_size' in
+#   'qtigralloc::private_handle_t'
+#
+# TARGET_BOARD_PLATFORM is "parrot" and this tree never applies the defaults
+# hardware/qcom-caf/common/BoardConfigQcom.mk derives from it, so the selects
+# fall back to their default (off). Set the TARGET_ variables and the Soong
+# config values caf_common would have produced, so either include order works.
+#
+# ubwcp_format stays off: none of the gralloc blobs we still ship (mapper.qti.so,
+# libmapperutils.so, libgralloccore.so) reference ubwcp or link libubwcp, so the
+# stock handle has no such field - adding it would change the ABI those blobs
+# were built against.
+TARGET_GRALLOC_HANDLE_HAS_RESERVED_SIZE := true
+TARGET_GRALLOC_HANDLE_HAS_CUSTOM_CONTENT_MD_RESERVED_SIZE := true
+TARGET_GRALLOC_HANDLE_HAS_UBWCP_FORMAT := false
+SOONG_CONFIG_qtidisplay_gralloc_handle_has_reserved_size := true
+SOONG_CONFIG_qtidisplay_gralloc_handle_has_custom_content_md_reserved_size := true
+SOONG_CONFIG_qtidisplay_gralloc_handle_has_ubwcp_format := false
+
 # Kernel (prebuilt GKI image, 6.6.118-android15-8-*-4k)
 #
 # build/make no longer knows TARGET_PREBUILT_KERNEL: a prebuilt kernel has to be
