@@ -4,5 +4,9 @@ type sysfs_sec_touch, sysfs_type, fs_type;
 type sysfs_sec_vibrator, sysfs_type, fs_type;
 type sysfs_fingerprint, sysfs_type, fs_type;
 
-# Block files
-type vendor_qmcs_file, file_type;
+# vendor_qmcs_file is declared by the QCOM vendor policy we inherit:
+#   device/qcom/sepolicy_vndr/generic/vendor/common/file.te
+#     type vendor_qmcs_file, file_type, vendor_qmcs_file_type;
+#     allow { vendor_qmcs_file }self:filesystem associate;
+# Redeclaring it here is a hard checkpolicy error:
+#   file.te:8:ERROR 'Duplicate declaration of type'
