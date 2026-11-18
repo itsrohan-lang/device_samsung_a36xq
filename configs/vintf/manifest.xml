@@ -7,8 +7,22 @@
     so nothing that a prebuilt service declares has to be repeated here.
 
     What is left is the content of the stock `manifest_parrot.xml`, which the
-    stock build never merged into the vendor image, plus the vendor sepolicy
-    version the prebuilt policy blobs were compiled with.
+    stock build never merged into the vendor image.
+
+    There is deliberately no <sepolicy> element here. assemble_vintf is invoked
+    with BOARD_SEPOLICY_VERS and stamps that value into the generated manifest;
+    the vendor policy in this image is built from source at the platform's
+    version, so hardcoding the stock value only fails the build:
+
+      Cannot override existing value 202404 with BOARD_SEPOLICY_VERS
+      (which is 202604).
+
+    The stock manifest_parrot.xml says 202404 because the stock vendor image is
+    SDK 35 (dump/vendor/build.prop: ro.vendor.build.version.sdk=35). That
+    describes the stock prebuilt policy blobs, which this tree does not use.
+
+    target-level="202404" is kept: it describes the HAL interfaces the prebuilt
+    vendor services implement, and it is what the stock vendor manifest declares.
 -->
 <manifest version="8.0" type="device" target-level="202404">
     <!-- vendor/samsung/hal-server/bluetooth, only declared in manifest_parrot.xml -->
@@ -16,8 +30,4 @@
         <name>vendor.samsung.hardware.bluetooth</name>
         <fqname>ISehBluetooth/default</fqname>
     </hal>
-
-    <sepolicy>
-        <version>202404</version>
-    </sepolicy>
 </manifest>
