@@ -98,7 +98,7 @@ vendor/lib64/libspeakercalibration.so
 -vendor/lib64/libtinyalsav2.so
 -vendor/lib64/libvibratorutils.so
 -vendor/lib64/spatializer-aidl-cpp.so
-vendor/lib64/vendor.qti.hardware.agm-V1-ndk.so
+-vendor/lib64/vendor.qti.hardware.agm-V1-ndk.so
 
 # Audio configs
 system/etc/audio_effects.xml
