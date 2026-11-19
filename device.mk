@@ -179,12 +179,15 @@ PRODUCT_PACKAGES += \
 
 # Sensors
 #
-# libsensorndkbridge is provided by frameworks/hardware/interfaces; building it
-# from source keeps the sensors AIDL version consistent with the rest of the ROM.
+# The vendor tree ships Samsung's libsensorndkbridge rather than the AOSP one:
+# it exports the ALooper_*_camera helpers that the QTI camera provider and the
+# Samsung camera blobs link against. Its own dependencies cannot be declared in
+# that prebuilt -- the blob needs sensors V2 while the ROM's
+# android.frameworks.sensorservice pulls V3 -- so install them here.
 PRODUCT_PACKAGES += \
     android.hardware.sensors-service.multihal \
-    libsensorndkbridge
-    
+    android.hardware.sensors-V2-ndk \
+    android.frameworks.sensorservice-V1-ndk
 
 # NFC
 PRODUCT_PACKAGES += \
