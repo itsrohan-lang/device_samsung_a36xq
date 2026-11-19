@@ -195,7 +195,7 @@ vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.1-impl.so
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@1.1-impl.so
 vendor/lib64/android.hardware.bluetooth.audio-impl.so
-vendor/lib64/android.hardware.camera.common-V2-ndk.so
+-vendor/lib64/android.hardware.camera.common-V2-ndk.so
 -vendor/lib64/android.hardware.graphics.allocator-V1-ndk.so
 -vendor/lib64/android.hardware.graphics.common-V5-ndk.so
 -vendor/lib64/libaconfig_storage_read_api_cc.so
