@@ -199,6 +199,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 		    android.hardware.graphics.allocator-V1-ndk
 
+# libqcodec2_core.so links the older graphics.common AIDL version at runtime
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.common-V5-ndk
+
 # Samsung Camera (vendor/samsung/camera)
 $(call inherit-product-if-exists, vendor/samsung/camera/camera.mk)
 
