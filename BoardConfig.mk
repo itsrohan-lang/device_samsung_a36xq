@@ -115,6 +115,56 @@ SOONG_CONFIG_qtidisplay += \
 SOONG_CONFIG_qtidisplay_gralloc_handle_has_reserved_size := true
 SOONG_CONFIG_qtidisplay_gralloc_handle_has_custom_content_md_reserved_size := true
 SOONG_CONFIG_qtidisplay_gralloc_handle_has_ubwcp_format := false
+# The remaining qtidisplay keys that hardware/qcom-caf/common/BoardConfigQcom.mk
+# declares with their defaults. This tree does not inherit that file, and
+# build/make drops every key that is not listed in SOONG_CONFIG_qtidisplay.
+# Without "default", qtidisplay_defaults does not add display_headers, so
+# libqdutils/libqservice users cannot find QServiceUtils.h and QtiGralloc.h.
+SOONG_CONFIG_qtidisplay += \
+    composer_version \
+    drmpp \
+    headless \
+    llvmsa \
+    gralloc4 \
+    displayconfig_enabled \
+    udfps \
+    default \
+    master_side_cp \
+    shift_horizontal \
+    shift_vertical \
+    smmu_proxy \
+    var1 \
+    var2 \
+    var3 \
+    hwasan \
+    hw_fence_disabled \
+    hy11 \
+    hy22 \
+    hy33
+
+SOONG_CONFIG_qtidisplay_composer_version ?= v3_3
+SOONG_CONFIG_qtidisplay_drmpp ?= false
+SOONG_CONFIG_qtidisplay_headless ?= false
+SOONG_CONFIG_qtidisplay_llvmsa ?= false
+SOONG_CONFIG_qtidisplay_gralloc4 ?= false
+SOONG_CONFIG_qtidisplay_displayconfig_enabled ?= false
+SOONG_CONFIG_qtidisplay_udfps ?= false
+SOONG_CONFIG_qtidisplay_default ?= true
+SOONG_CONFIG_qtidisplay_master_side_cp ?= false
+SOONG_CONFIG_qtidisplay_shift_horizontal ?= 0
+SOONG_CONFIG_qtidisplay_shift_vertical ?= 0
+SOONG_CONFIG_qtidisplay_smmu_proxy ?= false
+SOONG_CONFIG_qtidisplay_var1 ?= false
+SOONG_CONFIG_qtidisplay_var2 ?= false
+SOONG_CONFIG_qtidisplay_var3 ?= false
+SOONG_CONFIG_qtidisplay_hwasan ?= false
+SOONG_CONFIG_qtidisplay_hw_fence_disabled ?= false
+SOONG_CONFIG_qtidisplay_hy11 ?= false
+SOONG_CONFIG_qtidisplay_hy22 ?= false
+SOONG_CONFIG_qtidisplay_hy33 ?= false
+
+
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += $(DEVICE_PATH)/framework_compatibility_matrix.xml
 
 # Kernel (prebuilt GKI image, 6.6.118-android15-8-*-4k)
 #
