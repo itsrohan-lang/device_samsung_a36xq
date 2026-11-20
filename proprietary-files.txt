@@ -189,7 +189,7 @@ vendor/lib64/vendor.samsung.hardware.bluetooth-V1-ndk.so
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
 vendor/lib64/hw/android.hardware.bluetooth@aidl-impl-qti.so
 vendor/lib64/hw/android.hardware.bluetooth.audio-impl-qti.so
-vendor/lib64/hw/audio.bluetooth.default.so
+-vendor/lib64/hw/audio.bluetooth.default.so
 vendor/lib64/hw/audio.bluetooth_qti.default.so
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.1-impl.so
@@ -1321,7 +1321,7 @@ vendor/lib64/libkeystore-engine-wifi-hidl.so
 vendor/lib64/libpasn.so
 -vendor/lib64/libwifi-hal-ctrl.so
 -vendor/lib64/libwifi-hal-qcom.so
-vendor/lib64/libwifi-hal.so
+-vendor/lib64/libwifi-hal.so
 vendor/lib64/vendor.qti.hardware.wigig.netperftuner@1.0.so
 vendor/lib64/vendor.samsung.hardware.wifi.hostapd-V1-ndk.so
 vendor/lib64/vendor.samsung.hardware.wifi.nan-V1-ndk.so
@@ -1336,7 +1336,7 @@ vendor/etc/wifi/wpa_supplicant_overlay.conf
 # Miscellaneous
 odm/etc/apks_count_list.txt
 odm/etc/ueventd.rc
-vendor/apex/com.android.hardware.cas.lazy.apex
+-vendor/apex/com.android.hardware.cas.lazy.apex
 vendor/apex/com.samsung.android.authfw.ta.preload.apex
 vendor/apex/com.samsung.android.biometrics.face.signed.apex
 vendor/apex/com.samsung.android.biometrics.fingerprint.signed.apex
