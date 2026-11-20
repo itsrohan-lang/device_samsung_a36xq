@@ -17,12 +17,18 @@ if [ -n "$A36XQ_SKIP_PATCHES" ]; then
     return 0 2>/dev/null || exit 0
 fi
 
-_a36xq_top="${TOP:-$(gettop 2>/dev/null)}"
-if [ -z "$_a36xq_top" ]; then
-    return 0 2>/dev/null || exit 0
-fi
-
-_a36xq_patchdir="$_a36xq_top/device/samsung/a36xq/patches"
+# Do not rely on $TOP: this is sourced before envsetup exports it.  Resolve
+# the tree from this script's own location (device/samsung/a36xq -> top).
+_a36xq_src=${BASH_SOURCE[0]:-$0}
+case "$_a36xq_src" in
+    /*) ;;
+    *) _a36xq_src="$(pwd)/$_a36xq_src" ;;
+esac
+_a36xq_here=$(cd "$(dirname "$_a36xq_src")" 2>/dev/null && pwd)
+[ -n "$_a36xq_here" ] || { return 0 2>/dev/null || exit 0; }
+_a36xq_top=$(cd "$_a36xq_here/../../.." 2>/dev/null && pwd)
+[ -n "$_a36xq_top" ] || { return 0 2>/dev/null || exit 0; }
+_a36xq_patchdir="$_a36xq_here/patches"
 
 for _a36xq_patch in "$_a36xq_patchdir"/*.patch; do
     [ -e "$_a36xq_patch" ] || continue
@@ -40,4 +46,4 @@ for _a36xq_patch in "$_a36xq_patchdir"/*.patch; do
     fi
 done
 
-unset _a36xq_top _a36xq_patchdir _a36xq_patch _a36xq_target _a36xq_repo
+unset _a36xq_src _a36xq_here _a36xq_top _a36xq_patchdir _a36xq_patch _a36xq_target _a36xq_repo
