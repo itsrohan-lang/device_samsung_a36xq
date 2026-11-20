@@ -1,0 +1,29 @@
+# target-repo: frameworks/opt/net/wifi
+# Export the libwifi-hal headers to vendor consumers.
+#
+# The a36xq vendor tree ships Samsung's libwifi-hal.so as a prebuilt, so the
+# platform's libwifi-hal (which is not vendor_available) cannot provide the
+# headers that android.hardware.wifi-service-lib and friends need.  Upstream
+# solves this by building a vendor-available libwifi-hal.so from source; we
+# only need the headers.
+diff --git a/libwifi_hal/Android.bp b/libwifi_hal/Android.bp
+--- a/libwifi_hal/Android.bp
++++ b/libwifi_hal/Android.bp
+@@ -123,6 +123,17 @@ wifi_cc_defaults {
+     },
+ }
+ 
++// Header-only interface exported by libwifi-hal. Kept as a separate module so
++// that devices which replace libwifi-hal with a prebuilt can export the same
++// headers to consumers (e.g. android.hardware.wifi-service-lib).
++cc_library_headers {
++    name: "libwifi-hal-headers",
++    vendor_available: true,
++    export_include_dirs: ["include"],
++    header_libs: ["wifi_legacy_headers"],
++    export_header_lib_headers: ["wifi_legacy_headers"],
++}
++
+ // Common code shared between the HALs.
+ cc_library_static {
+     name: "libwifi-hal-common",
