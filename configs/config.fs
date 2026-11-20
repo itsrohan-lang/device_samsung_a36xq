@@ -128,3 +128,10 @@ mode: 0755
 user: AID_SYSTEM
 group: AID_SYSTEM
 caps: NET_BIND_SERVICE
+
+# Samsung vendor AIDs (values from stock vendor/etc/group)
+[AID_VENDOR_SECDIR]
+value:5050
+
+[AID_VENDOR_SSGTZD]
+value:2912
