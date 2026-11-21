@@ -183,10 +183,13 @@ PRODUCT_PACKAGES += \
 # it exports the ALooper_*_camera helpers that the QTI camera provider and the
 # Samsung camera blobs link against. Its own dependencies cannot be declared in
 # that prebuilt -- the blob needs sensors V2 while the ROM's
-# android.frameworks.sensorservice pulls V3 -- so install them here.
+# android.frameworks.sensorservice pulls V3 -- so install them here.  The
+# .vendor suffix is required: without it Soong installs the platform variant
+# into /system, which vendor processes cannot dlopen (these libs are not
+# LLNDK).
 PRODUCT_PACKAGES += \
     android.hardware.sensors-service.multihal \
-    android.hardware.sensors-V2-ndk \
+    android.hardware.sensors-V2-ndk.vendor \
     android.frameworks.sensorservice-V1-ndk
 
 # NFC
@@ -197,11 +200,65 @@ PRODUCT_PACKAGES += \
 
 # com.qti.chi.override.so links the older allocator AIDL version at runtime
 PRODUCT_PACKAGES += \
-		    android.hardware.graphics.allocator-V1-ndk
+		    android.hardware.graphics.allocator-V1-ndk.vendor
 
 # libqcodec2_core.so links the older graphics.common AIDL version at runtime
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.common-V5-ndk
+    android.hardware.graphics.common-V5-ndk.vendor
+
+# vendor.qti.hardware.camera.postproc@1.0-service-impl.so links the V2 camera
+# common AIDL lib at runtime (the platform names it after the current version).
+PRODUCT_PACKAGES += \
+    android.hardware.camera.common-V2-ndk.vendor
+
+# The stock HALs and the CAF trees declare the same service names.  Only the
+# CAF display/audio modules are actually built for this product (the vendor
+# prebuilts were dropped to avoid duplicate module names), so list them here.
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.display.composer-service \
+    vendor.qti.hardware.display.allocator-service \
+    vendor.qti.hardware.display.demura-service \
+    vendor.qti.hardware.display.composer3-V3-ndk.samsung \
+    vendor.qti.hardware.display.demura-V1-ndk.samsung \
+    vendor.qti.hardware.memtrack-service \
+    libsdmcore \
+    libhistogram \
+    libgpu_tonemapper \
+    libfilefinder \
+    init.qti.display_boot.sh \
+    vndservicemanager
+
+PRODUCT_PACKAGES += \
+    audioadsprpcd \
+    libagm_pcm_plugin \
+    libagm_mixer_plugin \
+    libagm_compress_plugin \
+    libsndcardparser \
+    libfmpal \
+    libhfp_pal \
+    libaudiochargerlistener \
+    libbatterylistener \
+    libqcomvoiceprocessing \
+    lib_bt_aptx \
+    lib_bt_ble \
+    lib_bt_bundle
+
+# Keymint must be Samsung's TEE-backed service (AOSP's reference service runs
+# the TA in-process).  The CAF bootctrl tree is not in our Soong namespaces, so
+# the stock boot-control binary and VINTF fragment are restored under new
+# module names.
+PRODUCT_PACKAGES += \
+    android.hardware.security.keymint-service.samsung \
+    android.hardware.boot-service.qti.samsung \
+    a36xq-boot-service.qti.xml
+
+# These prebuilts were dropped because QTI source modules exist, but the
+# modules were never added to the product.
+PRODUCT_PACKAGES += \
+    android.hardware.usb-service.qti \
+    vendor.qti.qspa-service \
+    nqnfcinfo.samsung \
+    libvndfwk_detect_jni.qti_vendor
 
 # Samsung Camera (vendor/samsung/camera)
 $(call inherit-product-if-exists, vendor/samsung/camera/camera.mk)

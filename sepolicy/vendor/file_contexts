@@ -62,3 +62,8 @@
 /vendor/bin/hw/vendor\.samsung\.hardware\.tlc\.kg\-service                        u:object_r:hal_samsung_tlc_default_exec:s0
 /vendor/bin/hw/vendor\.samsung\.hardware\.tlc\.payment\-service                   u:object_r:hal_samsung_tlc_default_exec:s0
 /vendor/bin/hw/vendor\.samsung\.hardware\.tlc\.ucm\-service                       u:object_r:hal_samsung_tlc_default_exec:s0
+
+# The stock TEE keymint and boot-control services are installed under their
+# own names because AOSP/CAF modules occupy the original paths.
+/vendor/bin/hw/android\.hardware\.security\.keymint-service\.samsung             u:object_r:hal_keymint_default_exec:s0
+/vendor/bin/hw/android\.hardware\.boot-service\.qti\.samsung                     u:object_r:hal_bootctl_default_exec:s0

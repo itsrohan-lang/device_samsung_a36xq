@@ -461,7 +461,7 @@ on post-fs-data
     # Meta event
     chown system radio /sys/class/sensors/sensor_dev/flush
 
-service nqnfcinfo /system/vendor/bin/nqnfcinfo
+service nqnfcinfo /vendor/bin/nqnfcinfo.samsung
     class late_start
     group nfc
     user system
